@@ -10,12 +10,14 @@ aliases:
 ---
 Dato un [[grafo]] [[orientato]] [[Cycle|ciclico]], si richiede di identificare le componenti fortemente connesse e un loro [[Ordinamento Topologico|ordine topologico]].
 
-Ricordiamo la definizione di Componenti fortemente connesse:
-![[Strongly connected components]]
+
+### Definizione di grafo fortemente connesso
+Nella teoria matematica dei grafi diretti, un grafo è detto fortemente connesso se ogni vertice è raggiungibile da ogni altro vertice. I componenti fortemente connessi di un grafo diretto arbitrario formano una partizione in sottografi che sono essi stessi fortemente connessi. È possibile testare la forte connettività di un grafo, o trovare i suoi componenti fortemente connessi, in tempo lineare (cioè, $Θ(V + E)$).
 
 ---
->[!note]- Nota sui grafi connessi
-> Per verificare che un grafo sia connesso, possiamo effettuare una [[Depth First Search|DFS]] (o una [[Breadth First Search|BFS]]) e verificare che nell'array dei predecessori non vi esistano due vertici con predecessori a `NULL`.
+
+### Come è possibile verificare se un grafo sia connesso?
+ Per verificare che un grafo sia connesso, possiamo effettuare una [[Depth First Search|DFS]] (o una [[Breadth First Search|BFS]]) e verificare che nell'array dei predecessori non vi esistano due vertici con predecessori a `NULL`.
 
 In questo esempio sono cerchiate le componenti fortemente connesse.
 ![[Pasted image 20230910163001.png]]
@@ -27,13 +29,12 @@ Se ad esempio la visita in [[profondità]] partisse da c, troverebbe anche altr
 - $j,k,l,m$ 
 e la includerebbe nella sua , formando quindi un'unica componente, il che è sbagliato
 
+### Quali sono gli step da seguire per il calcolo delle componenti fortemente connesse?
 Bisogna quindi seguire tre step:
 1. Eseguire una prima $\textbf{DFS}$ per ottenere in uno stack l'ordine inverso di visita dei nodi
 2. Calcolare il grafo trasposto $G^T$ di $G$
 3. Eseguire una $\textbf{DFS}$ leggermente modificata su $G^T$ e sullo [[stack]] $S$ restituito dalla prima $\textbf{DFS}$.
-
 La prima $\textbf{DFS}$ restituisce anche uno stack $S$ con i vertici ordinati in modo decrescente per tempo di fine visita, ovvero dall’ultimo che finisce al primo che finisce.
-
 La visita in $G^T$ viene fatta sui vertici nello stack $S$ (dalla $\textbf{DFS}$ di prima)
 ![[Pasted image 20230910163336.png]]
 - Parte da $a$ ma non ci sono archi uscenti, quindi termina la sua visita.
@@ -45,13 +46,11 @@ La visita in $G^T$ viene fatta sui vertici nello stack $S$ (dalla $\textbf{DFS}$
 	- $k$ prova a visitare $j$ ma  è stato già scoperto.
 	- ***Le viste terminano***
 - E così via per tutti gli altri nodi
-
 Se non avessimo trasposto il grafo, nella prima visita, il nodo $a$ avrebbe trovato $b$ e $c$ come archi uscenti e il risultato sarebbe stato sbagliato.
 
 ## Algoritmi
 >[!important] 
 >$$G=<V,E>\;\;\;G^{T}=<V,E^{-1}>$$
-
 
 ```Python
 def DFS1(G):
@@ -90,14 +89,15 @@ def Transpose(G):
 - Gli archi sono rappresentati dagli adiacenti di un vertice, in questo caso da $v$ a $w$.
 - Basterà quindi inserire nell’insieme degli archi del grafo trasposto $E_{G^{T}}$ , l’arco che va da $w$ a $v$.
 
-### Strongly [[Connected]] Component
+### Cosa contiene il vettore *scc* delle componenti fortemente connesse?
 Il vettore ***scc*** contiene il vertice rappresentante della componente alla quale l’$i$-esimo vertice partecipa.
-
 Ad esempio, la componente $j, k, l, m$ ha come rappresentate $j$ solo perché compare prima nell’ordinamento topologico, ma ognuno di questi vertici sarebbe potuto esserlo.
 - $scc(j):j\;\;\;\;\;j$ si trova nella componente con rappresentante $j$
 - $scc(k):j\;\;\;\;\;k$ si trova nella componente con rappresentante $j$
 - $scc(l):j\;\;\;\;\;l$ si trova nella componente con rappresentante $j$
 - $scc(m):j\;\;\;\;\;m$ si trova nella componente con rappresentante $j$
+
+
 
 ```python
 def DFS_SCC(G, S):

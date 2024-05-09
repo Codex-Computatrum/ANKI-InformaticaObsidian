@@ -5,6 +5,8 @@ tags:
   - dataStructure/abr
   - to-do/implementation
 ---
+
+### Idea generale sulla cancellazione in un ABR
  Se il nodo da cancellare non **ha figli**, si elimina il nodo stesso
 - Se il nodo $x$ da eliminare **ha un solo figlio**, basta collegare il figlio di $x$ al padre di $x$
 	- ![[Pasted image 20230830085528.png]]
@@ -13,6 +15,7 @@ tags:
 		- Il MAX del ramo sinistro può avere al massimo il figlio destro che è più piccolo. Se avesse anche il figlio destro, non sarebbe il massimo
 	- Sposto il **MIN del ramo destro**
 		- Il Min del ramo destro può avere al massimo il figlio sinistro che è più grande. Se avesse anche il figlio sinistro, non sarebbe il massimo
+
 #### Esempio
 ![[Pasted image 20230830090150.png]]
 In questo caso è stato spostato il **MIN del ramo destro** dovendo eliminare il nodo con dato $10$.
@@ -23,7 +26,7 @@ In questo caso è stato spostato il **MIN del ramo destro** dovendo eliminare il
 >Bisogna trovare il [[Minimo-Massimo|minimo]] (o il massimo) quindi definire tale funzione per gli [[Albero binario di ricerca|BST]]
 
 ---
-## $\textbf{Delete}$
+## Idea generale sull'algoritmo $\textbf{Delete}$
 Questa è la funzione che verrà chiamata per eliminare il nodo contente il dato $d$.
 - Cerca il nodo
 - Se trovato, chiama la funzione $DeleteNode$

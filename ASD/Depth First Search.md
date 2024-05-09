@@ -9,6 +9,7 @@ aliases:
   - DFS
   - dfs
 ---
+### Idea generale riguardo Depth First Search
 ![[Pasted image 20230908170349.png]]
 - Inizialmente tutti i nodi vengono colorati di **bianco**.
 - Supponiamo che la visita parta dal nodo $b$, questo viene scoperto e quindi colorato di **grigio**.
@@ -23,7 +24,10 @@ aliases:
 - Il nodo $d$ tenta di visitare $f$ ma che è già stato visitato, termina la sua visita, viene colorato di **nero** e passa il controllo a $b$.
 - Anche $b$ ha terminato e viene colorato di **nero**.
 - Non essendoci più nodi da visitare, l’[[algoritmo]] termina.
-## Funzionamento dell'algoritmo
+
+
+
+## Funzionamento dell'algoritmo di DFS
 
 ```python
 def DFS(G):
@@ -35,11 +39,9 @@ def DFS(G):
 	return (c, p, d, f)
 ```
 ^DFS
-
 - La funzione $\textbf{DFS}$ esegue la visita su tutti i nodi bianchi del [[grafo]].
 - La funzione di visita $\textbf{DFSVisit}$ partirà da un certo nodo e scorrerà fino in fondo, colorando i nodi che incontra.
 - Di conseguenza, il $for each$ in $\textbf{DFS}$ non visiterà nuovamente i nodi già visitati da qualche altro nodo durante la visita $\textbf{DFSVisit}$
- 
 ```python
 def DFSVisit(G, v, c, p, d, f, t):
 	(c(v), d(v), t) = (gr, t, t+1)
@@ -51,17 +53,14 @@ def DFSVisit(G, v, c, p, d, f, t):
 	return (c, p, d, f, t)
 ```
 ^DFS-Visit
-
 - La funzione $\textbf{DFSVisit}$ esegue la vera e propria visita.
 - Dato un nodo, $\textbf{DFSVisit}$ ha il compito di scendere, e quindi effettuare la visita, fin tanto che può; ossia finché arriva ad un nodo che non ha archi uscenti.
-
 >[!note] 
 > - $t\;\;$ Tempo, è un intero che rappresenta il momento in cui un nodo inizia o finisce la visita
 > - $d\;\;$ Vettore del tempo di inizio visita 
 > - $f\;\;$ Vettore del tempo di fine visita
 > - $c\;\;$ Vettore dei colori
 > - $p\;\;$ Vettore dei predecessori
-
 $d, f, t$ sono solo utili a dimostrare il teorema della [[Teorema della struttura a parentesi|struttura a parentesi]] delle $DFS$, non servono per la visita in profondità.
 - Ho scoperto il nodo $v$ quindi lo coloro di **grigio**, imposto il tempo di inizio visita con $t$, poi incremento $t$.
 - Il nodo corrente $v$ visita la stella uscente.
@@ -69,4 +68,3 @@ $d, f, t$ sono solo utili a dimostrare il teorema della [[Teorema della struttur
 - Terminata la visita dei suoi adiacenti, $v$ termina il suo lavoro: viene colorato di **nero** e viene impostato il tempo di fine visita  
 >[!note]
 > Viene assegnato $t$ come tempo di fine visita, ma le chiamate ricorsive l’avranno incrementato, quindi **non è lo stesso di prima**
-

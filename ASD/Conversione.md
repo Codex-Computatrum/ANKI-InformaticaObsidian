@@ -4,8 +4,12 @@ tags:
   - example
 author: Lorenzo Tecchia
 ---
+### Idea generale sulla conversione tra un algoritmo ricorsivo e uno iterativo
 Qualsiasi [[algoritmo]] ricorsivo può essere trasformato in iterativo e viceversa.  
 La [[ricorsione]] permette di risolvere problemi difficili in modo semplice rispetto all’iterazione, però è svantaggiosa in termini di [[memoria]], dato che ogni chiamata alloca memoria per tenere traccia delle variabili locali, il valore di ritorno, e così via.
+
+
+
 
 ```python
 def RecursiveMin(x):
@@ -30,6 +34,9 @@ Scorrimento in [[Order-pre|pre-ordine]] e [[Order-post|post-ordine]] su una [[Li
 - $L$ lista
 - $F$ funzione che effettua operazioni sull'accumulatore
 - $a$ accumulatore: variabile che sarà restituita come risultato della funzione
+
+
+
 
 ```python
 def PreFold(L, F, a):
@@ -73,6 +80,9 @@ Nelle non-tail recursive salviamo le variabili in uno **stack**. Non è possibi
 ## Traduzione di un algoritmo
 Questo è un algoritmo che lavora su un [[Tree|albero]]; non c’è semantica, serve solo come esempio per vedere la traduzione da ricorsivo a iterativo.
 
+
+
+
 ![[Pasted image 20230911154113.png|400]]
 $F$, in generale, è una certa funzione che elabora i dati e restituisce un valore, il pedice di ognuna serve solo per dare un minimo di significato.
 - $F_{ini}\;\;$ **ini**ziale, viene eseguita all'inizio della funzione ricorsiva
@@ -95,6 +105,9 @@ $F$, in generale, è una certa funzione che elabora i dati e restituisce un val
 	- riga $7$, viene sostituita con $k_{L}$ 
 	- riga $9$, viene letta $j$ che però ho perso avendola sostituita prima
 	- ***Ha bisogno dello stack***
+
+
+
 #### Analizziamo le variabili interne 
 - $\textbf{a}$:
 	- viene letta prima delle chiamate ricorsive, ma mai dopo
@@ -111,6 +124,9 @@ $F$, in generale, è una certa funzione che elabora i dati e restituisce un val
 - $\textbf{h}_{R},\textbf{h}_{L}, \textbf{z}_{L}$:
 	- vengono sia scritte che lette dopo una chiamata ricorsiva
 	- ***Hanno bisogno dello stack***
+
+
+
 
 Hanno bisogno dello stack: $x, j, h_{R} , h_{L} , z_{L}$
 Utilizziamo una variabile booleana call per capire se è stata fatta una chiamata ricorsiva (quindi sto ”scendendo”, call = `TRUE`) oppure è stato fatto un return (quindi sto ”risalendo”, call = `FALSE`)
@@ -136,6 +152,9 @@ Questa simulazione viene fatta quando si sta ritornando dalla chiamata ricorsiva
 > - Uso il corpo della funzione ricorsiva(escludendo la chiamata ricorsiva della funzione) come il corpo del $while$
 > -  Alla fine del $while$ aggiungo all'accumulatore il caso base e ritorno l'accumulatore come output
 
+
+
+
 ### In generale
 >[!summary] 
 > Ricapitolando:
@@ -154,3 +173,6 @@ Questa simulazione viene fatta quando si sta ritornando dalla chiamata ricorsiva
 > 	1. Preparo gli stack, quindi faccio il push delle variabili che sono state utilizzate
 > 	2. Sostituisco le variabili dei parametri con gli argomenti della chiamata
 > 	3. Imposto $call \leftarrow true$ perché dopo la $chiamata ricorsiva$ la funzione scende
+
+
+

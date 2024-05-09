@@ -6,6 +6,7 @@ exmap surround_brackets surround ( )
 exmap surround_square_brackets surround [ ]
 exmap surround_curly_brackets surround { }
 exmap surround_dollar_sign surround $ $
+exmap surround_underscore surround _ _
 
 " NOTE: must use 'map' and not 'nmap'
 map [[ :surround_wiki
@@ -22,3 +23,7 @@ map s[ :surround_square_brackets
 map s{ :surround_curly_brackets
 map s} :surround_curly_brackets
 map s$ :surround_dollar_sign
+map s_ :surround_underscore
+
+
+set clipboard=unnamedplus

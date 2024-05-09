@@ -6,10 +6,7 @@ tags:
   - operation
   - to-do/implementation
 ---
->[!todo] 
->- [ ] Implementazione in C
 ### Funzionamento
-
 ```python
 def DFVPost(X, F, a):
 	if x != NULL:

@@ -19,7 +19,7 @@ def Acyclic(G):
 	return True
 ```
 ^acyclic
-<!--ID: 1715178882563-->
+
 
 
 ```python
@@ -38,18 +38,12 @@ def DFSAciclic(G, v, color):
 ```
 ^dfs-acyclic
 
-### La struttura è identica ad una $\textbf{DFS}$.
+### Idea generale dietro l'algoritmo di aciclicità e suo tempo di esecuzione
 - Inizializza il colore di tutti i vertici a **bianco**.  
 - Controlla ogni vertice non scoperto (**bianco**) del grafo, se solo uno di questi trova un **ciclo**, il grafo non è **aciclico** e restituisce `FALSE`.
 - Controllati tutti i vertici, se nessuno di questi ha trovato un ciclo, allora il grafo è **aciclico** e restituisce `TRUE`
-<!--ID: 1715178882564-->
-
-### $\textbf{DFSAcyclic}$:  
-Il vertice $v$ è stato scoperto, quindi viene colorato di **grigio** e viene esplorata la stella uscente:
+- Il vertice $v$ è stato scoperto, quindi viene colorato di **grigio** e viene esplorata la stella uscente:
 - se il nodo adiacente $w$ è **bianco**, allora scende ricorsivamente in $w$  
 - se il nodo adiacente $w$ è **grigio**, allora è stato incontrato un nodo che è stato già visitato durante la discesa, ***quindi è stato trovato un ciclo***
-<!--ID: 1715178882565-->
-
-### $\textbf{DFSAcyclic}$:
 - Nel caso migliore, impiega tempo costante $\varOmega(1)$ 
 - Nel caso peggiore, impiega $O(|G|)$

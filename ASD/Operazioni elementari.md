@@ -2,6 +2,7 @@
 author: Lorenzo Tecchia
 tags: [definition, dataStructure]
 ---
+### Operazioni elementari su qualsiasi struttura dati
 Nelle [[Struttura dati|strutture dati]]  in generale esistono un numero di operazioni in comune, queste possono essere:
 - $Search(S, d): x | NULL$ 
 	- Cerca nella struttura $S$ un elemento che possiede il dato $d$.
@@ -14,6 +15,8 @@ Nelle [[Struttura dati|strutture dati]]  in generale esistono un numero di opera
 	- Restituisce una nuova struttura $S'$, con il dato $d$ eliminato
 - $IsEmpty(S): bool$
 	- Restituisce $true$ se la struttura $S$ è vuota, $false$ altrimenti
+
+
 
 >[!important] 
 >Ovviamente ogni struttura può avere delle proprie operazioni e proprietà specifiche per la struttura dati in sé

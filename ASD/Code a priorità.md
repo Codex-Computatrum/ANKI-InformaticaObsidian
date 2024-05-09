@@ -5,8 +5,10 @@ tags:
   - dataStructure
   - to-do/implementation
 ---
+### Coda a priorità
 Una [[coda]] di priorità è una [[struttura dati]] che serve a mantenere un [[Fundamentals#set|insieme]] $S$ di elementi, ciascuno con un valore associato detto **chiave**.
 
+### Operazioni sulla struttura dati coda a priorità
 Una coda di ***max-priorità*** supporta le seguenti operazioni:
 - $Insert(S,x)$: inserisce l'elemento $x$ nell'insieme $S$, che equivale all'operazione:$S = S \;\cup\; \{x\}$
 - $MAXIMUM(S)$: restituisce l'elemento di $S$ con la chiave più grande

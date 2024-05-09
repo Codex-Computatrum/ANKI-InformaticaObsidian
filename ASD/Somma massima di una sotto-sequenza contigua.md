@@ -3,31 +3,29 @@ tags: [algorithm, example]
 alias: [max-sub-sequene-sum]
 author: Lorenzo Tecchia
 ---
-Descriviamo un [[algoritmo]] che accetta in input una sequenza di numeri di una certa lunghezza $A = (a_{1}, a_{2}, \dots, a_{n})$ dove $\forall i \in \mathbb{N}, \;\; a_{i} \in \mathbb{Z}$ ed un intero $n > 0$ che rappresenta la lunghezza della sequenza
 
+## Idea generale sul problema della massima sottosequenza
+Descriviamo un [[algoritmo]] che accetta in input una sequenza di numeri di una certa lunghezza $A = (a_{1}, a_{2}, \dots, a_{n})$ dove $\forall i \in \mathbb{N}, \;\; a_{i} \in \mathbb{Z}$ ed un intero $n > 0$ che rappresenta la lunghezza della sequenza
 L'output di tale algoritmo è invece un numero $v \in \mathbb{N}$ che rappresenta il [[massimo]] valore tra le somme di tutte le sotto-sequenze contingue di $A$(ads esempio una sotto-sequenza contigua di $a_{1}a_{2}a_{3}a_{4}$ è $a_{2}a_{3}$ oppure $a_{4}$, mentre non è sotto-sequenza contingua $a_{1}a_{2}a_{5}$) . Formalizziamo meglio il problema:
-##### Input $\rightarrow$
+___Input $\rightarrow$___
 - Una sequenza $A = (a_{1}, a_{2}, \dots, a_{n})$ con $a_{i} \in \mathbb{Z} \forall i \in \mathbb{N},$
 - Un intero $n \geq 1$
 - **Esempio**$\rightarrow (2, -4, 8, 3 -5, 4, 6, -7, 2), n = 9$
-##### Output $\rightarrow$
+___Output $\rightarrow$___
 - Un intero $V$ tale che $V \;\; \sum\limits_{k=1}^{j}a_{k}$ dove $1 \leq i \leq j \leq n$ e $V$ è il più grande possibile
 - Tutti gli elementi nella sommatoria devono essere contigui nella sequenza dell'input
 - **L'output del precedente esempio** $\rightarrow \;\; 8 +3 -5+4+6 = 16$ 
 ---
-### Soluzione 1 (naive)
+### Soluzione 1 (naive) al problema della massima sottosequenza
 Un primo approccio potrebbe essere quello di trovare la somma di tute le sotto-sequenze e restituire la maggiore.
-
 Sappiamo che il numero di sotto-sequenze è finito per sequenze continue. Inoltre, tutte le sotto-sequenze contigue non vuote sono [[corrispondenza]] biunivoca con la propria vista per il `CONTACOPPIE`, ne consegue che il numero di sotto-sequenze contigue, compresa quella vuota è pari a $\frac{n(n+1)}{2} + 1$.
-
 Abbiamo quindi decomposto il problema in:
 - Generare tutte le sotto-sequenze
 - Sommare tutti gli elementi di una sotto-sequenza
-
 Si noti che poiché il valore di una sotto-sequenza vuota è $0$, possiamo dire con certezza che $V \geq 0$ per qualsiasi sotto-sequenza.
 
-Un possibile algoritmo è il seguente:
 
+Un possibile algoritmo è il seguente:
 ```python
 def maxSUM(A, n):
 	V = 0
@@ -77,16 +75,15 @@ $$
 Ciò conclude la nostra analisi $\rightarrow$ L'algoritmo descritto ha tempo di esecuzione $T(n) = \Theta(n^{3})$
 
 ---
-### Soluzione 2
+### Soluzione 2 al problema della massima sottosequenza
 Un notevole miglioramento al precedente algoritmo può essere fatto notando che molti calcoli vengono ripetuti (sprecando tempo). Il problema è legato al calcolo di una sotto-sequenza data(l'ultimo *for* della soluzione precedente).
 Infatti possiamo osservare che:$$\sum_{k=1}^j A[k]=\sum_{k=1} j-1 A[k]+A[j]$$
 Ma $\sum\limits_{k=1}^{j-1}A[k]$ è la quantità gia presente in `SUM` ed è quindi già stata calcolata. Pertanto:$$\sum_{k=i}^{j-1} S U M+A[k]$$
 È evidente che una linea di questo tipo ha contributo costante (ne traiamo vantaggio dalle iterazioni precedenti)
-
 La suddetta osservazione non può essere utilizzata così come è $\rightarrow$ Bisogna comprendere quando azzerare `SUM` e sotto quali condizioni si può sfruttare il 
 precedente algoritmo
-
 Fintanto che l'indice resta `i` resta sempre lo stesso si vuole aggiornare il precedente valore di `SUM`, mentre quando varia allora `SUM` va azzerato poiché ci si trova in una nuova sotto-sequenza.
+
 
 Questa idea può essere formalizzata nel seguente algoritmo:
 
@@ -106,37 +103,29 @@ def maxSum(A, n):
 Questo algoritmo impiega tempo $T(n) = \Theta(n^{2})$ ed è quindi un miglioramento significativo dal punto di vista asintotico della soluzione $1$
 
 ---
-### Soluzione 3
+### Soluzione 3 al problema della massima sottosequenza
 Dal precedente algoritmo si può dire che sia ottimale per il calcolo della somma di ogni sotto-sequenza contigua; infatti non è possibile crearne uno migliore se si vuole calcolare il valore di tutte le sotto-sequenze poiché, il numero di sotto-sequenze in una sequenza è di per sé quadratico.
-
 Tuttavia il nostro algoritmo non richiede il calcolo di tutti i valori (è stata una nostra scelta questo approccio $\rightarrow$ l'algoritmo ottimale di un problema non è detto che sia ottimale per un altro problema).
 Si noti infatti che è inutile valutare tutte le sotto-sequenze e di conseguenza non è necessario esplorare del tutto la nostra istanza attraverso un algoritmo di brute force, che quasi mai sono esaustivi.
->[!note]
-> Per **brute force** s'intende un algoritmo che offre una soluzione esaustiva $\rightarrow$ Sonda tutti gli elementi possibili per quella istanza (nel nostro caso tutte le sotto-sequenze)
-
+___Per **brute force** s'intende un algoritmo che offre una soluzione esaustiva $\rightarrow$ Sonda tutti gli elementi possibili per quella istanza (nel nostro caso tutte le sotto-sequenze)___
 Attraverso l'analisi della nostra sequenza possiamo arrivare alla seguente intuizione:
 Assumiamo che $\mathbb{SUM}(i, j -1) \geq 0$ e ciò significa che tutte le sotto-sequenze che vanno da $i$ a $j -1$ sono non negative $\rightarrow \mathbb{SUM}(i, k) \geq 0 \forall k \;:\; i \leq kj$
->[!note]
-> $\mathbb{S U M}(i, k) \Longleftrightarrow \sum\limits_{k=i}^{j-1} a_k$
-
+- $\mathbb{S U M}(i, k) \Longleftrightarrow \sum\limits_{k=i}^{j-1} a_k$
 ![[Pasted image 20231117130347.png]]
-
 A questo punto è evidente che sommando anche il valore presente nella cella $j\;\;|(a_{j})$ si avrà o un risultato non ancora negativo oppure un risultato positivo.
-#### Prima proprietà
+- ***Prima proprietà***
 $$\mathbb{S U M}(i, j) \geq 0 \Longrightarrow \mathbb{S U M}(r, l) \leq \mathbb{S U M}(i, l) \forall i \leq r \leq l \leq j$$
 ![[Pasted image 20231117130641.png]]
 Ovvero, nessuna sotto-sequenza di una sequenza non negativa può essere migliore di quella partenza. Infatti:$$\underbrace{\sum_{k=1}^j a_k}_{\geq 0}=\underbrace{\sum_{k=1}^{r-1} a_k}_{\geq 0}+\sum_{k=r}^j a_k \Longrightarrow \sum_{k=r}^j a_k=\underbrace{\sum_{k=1}^j a_k}_{\geq 0}-\underbrace{\sum_{k=1}^{r-1} a_k}_{\geq 0} \Longrightarrow \sum_{k=r}^j a_k \leq \sum_{k=i}^j a_k$$
 Da questa proprietà capiamo che possiamo ignorare tutte le sotto-sequenze di una sequenza non negativa.
-#### Seconda proprietà
+- ***Seconda proprietà***
 $\mathbb{SUM}(i, j) \leq 0 \rightarrow \mathbb{SUM}(r, l) < \mathbb{SUM}(j+1, l) \;\; \forall i \leq r \leq j \;\land \; \forall j +1 \leq l \leq n$. Quindi se da $i$ a $j - 1$ tutte le sotto-sequenze sono $\geq 0$ ma la sequenza da $i$ a $j$ è negativa significa che qualunque sotto-sequenza che parte da $r \leq j$ ed arriva a $l > j$ è sicuramente minore della sequenza che va da $j$ ad $l$.
 ![[Pasted image 20231117131144.png]]
 Infatti:$$\sum_{k=j+1}^l a_k=\sum_{k=i}^l a_k-\underbrace{\sum_{k=i}^j a_k} \Longrightarrow \sum_{k=j+1}^l a_k>\sum_{k=i}^l a_k$$
 Quindi la proprietà $2$ oltre a dirci di dover conservare la sequenza da $i$ a $j-1$ ci consente anche di ignorare altre sotto-sequenze.
-
 Dopo queste analisi è abbastanza intuitivo che il codice seguente avrà complessità lineare poiché muoverò sempre in avanti:
 1. Se $\mathbb{SUM}(i, j) \geq 0$ allora è lo stesso $i$ e incremento $j$
 2. Se $\mathbb{SUM}(i, k) < 0$ allora parto direttamente da $j + 1$ e vado avanti
-
 Dunque, i salti sono giustificati dalla proprietà $2$ e il fatto di non dover esaminare le sequenze intermedie della proprietà $1$. Ma allora l'algoritmo finale sarà il seguente:
 
 ```python

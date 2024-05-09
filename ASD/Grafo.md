@@ -10,6 +10,8 @@ tags:
 ## Definizione
 ![[Graph|Definizione]]
 ---
+
+
 ## Proprietà:
 - ![[Complete]]
 - ![[Adjacent]]
@@ -18,5 +20,7 @@ tags:
 - ![[Connected]]
 - ![[Component]]
 - ![[Subgraph]]
+
+
 ## [[Grafo esempi]] 
 

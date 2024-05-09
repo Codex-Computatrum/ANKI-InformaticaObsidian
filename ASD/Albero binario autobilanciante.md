@@ -9,34 +9,26 @@ aliases:
   - AVL
 ---
 
-### Alberi AVL
+### Definizione di alberi AVL
 Gli ***AVL*** sono [[Albero binario di ricerca|alberi binari di ricerca]] auto bilancianti. Per cui le proprietà:
 - $\forall x \in T, \lvert h(T_{x.sx})- h(T_{x.dx})\rvert \leq 1$ dove $T$ è l'albero, ossia l'[[altezza]] dei sotto alberi differisce al più di uno. 
 ![[Pasted image 20230831140231.png]]
 ---
-<!--ID: 1715178882557-->
 
-### Alberi AVL minimi 
+
+### Definizione di AVL minimi e osservazioni
 Un **AVL** minimo di altezza $h$, è l’**AVL** di altezza h con il minimo numero di nodi
-<!--ID: 1715178882558-->
-
-
 La classe degli **AVL** minimi, sono i peggiori riguardo l’altezza.  
 Questo **perché** gli algoritmi che scorrono l’altezza non dipendono dal numero di nodi.
-
 Di conseguenza, se all’aumentare dei nodi non aumenta l’altezza, allora l’albero è migliore rispetto ad avere meno nodi con la stessa altezza (aumento la quantità dei dati mantenendo la stessa efficienza).
-
 In particolare, se ad una certa altezza ho il minimo numero di nodi, allora ho l’albero peggiore per quell’altezza.
-
 Si osserva dunque, che se si dimostra che per gli **AVL** minimi $h = \Theta(\log(n))$ allora lo è anche per quelli non minimi (ovvero per tutti gli **AVL**).
 
 ![[appuntiIngenito.pdf#page=37]]
 
 ---
-## Inserimento di un nodo
->[!important] 
-> L'inserimento di un nodo, può rompere la struttura di un AVL.
-
+## Inserimento di un nodo in AVL
+L'inserimento di un nodo, può rompere la struttura di un AVL.
 L'[[algoritmo]] di inserimento, quindi dovrà anche risistemare l'albero affinché conservi la proprietà di **AVL**.
 ![[Pasted image 20230831144205.png]]
 - **Caso 1: Inserisco il nodo nel sotto-albero $\alpha$**
@@ -66,26 +58,21 @@ L'[[algoritmo]] di inserimento, quindi dovrà anche risistemare l'albero affinch
 		- Inserendo in $\beta$ , avrò il caso in cui sia $\beta_{1}$ sia $\beta_{2}$ sono alti $h−2$ altrimenti il problema si troverà in un altro punto, che andrà risolto comunque con uno dei due casi.
 		- In questo caso servono due rotazioni: una verso sinistra su $y$ e successivamente una verso destra su $x$
 >[!important] È importante l'ordine con cui si effettuano le rotazioni altimenti non funziona
-
 ![[Pasted image 20230831165054.png]]
 - Così facendo si è conservata la proprietà sia di **AVL** che **BST**:
 	- $\beta_{1}'$ continua ad essere $y < \beta'_{1} < z$ 
 	- $\beta_{2}'$ continua ad essere $y < \beta'_{2} < z$ 
 	- $z$ continua $y < \beta_{2} < z$
 ---
-### Costo
+### Costo dell'inserimento di un nodo in AVL
 Riparare, e quindi mantenere, la struttura di **AVL** dopo un inserimento, ha tempo costante dato che vengono effettuati degli scambi fra puntatori.
->[!important] Serve riparare l’albero ad ogni inserimento che rompe l’albero.
+Serve riparare l’albero ad ogni inserimento che rompe l’albero.
  
 ---
-<!--ID: 1715178882559-->
+
 
 ## Cancellazione in AVL
->[!summary] 
->La cancellazione porta gli stessi problemi dell'inserimento e si risolvono allo stesso modo
-<!--ID: 1715178882560-->
-
-
+La cancellazione porta gli stessi problemi dell'inserimento e si risolvono allo stesso modo
 ![[Pasted image 20230831170902.png]]
 ![[appuntiIngenito.pdf#page=41]]
 
@@ -101,7 +88,6 @@ def L-R-Rotation(x):
 	 
 ```
 ^L-R-Rotation
-<!--ID: 1715178882561-->
 
 
 ![[Pasted image 20231117124137.png|400]]
@@ -218,7 +204,7 @@ def AVLInsert(T, k):
 	return T
 ```
 ^AVLInsert
-<!--ID: 1715178882562-->
+
 
 
 - Simile all’inserimento in un **BST** ma con la differenza che bisogna bilanciare l’albero.

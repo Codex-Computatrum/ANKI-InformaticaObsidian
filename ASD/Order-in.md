@@ -6,9 +6,7 @@ tags:
   - operation
   - to-do/implementation
 ---
-
 ### Funzionamento
-
 ```python
 def DFVIn(X, F, a):
 	if x != NULL:

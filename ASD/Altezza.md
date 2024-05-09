@@ -4,7 +4,7 @@ tags: [definition, dataStructure, operation]
 ---
 ## Definizione di altezza in un albero
 L'***altezza*** di un [[Tree|albero]] misura la massima distanza di una foglia dalla radice dell'albero, in termini di numero di archi attraversati. 
-<!--ID: 1715179482301-->
+
 
 
 ## Altezza in un albero binario
@@ -14,7 +14,4 @@ $$h \geq \lceil log_{2}(n+1)-1\rceil \lor h \geq
 >[!important]
 > $2^{h+1} -1 = n \rightarrow 2^{h+1}=n +1 \rightarrow$
 >$\log_{2}(2^{h+1})\rightarrow \log_{2}(n+1)\rightarrow h+1 = \log_{2}(n+1) \rightarrow h = \log_{2}(n+1) -1$ 
-<!--ID: 1715179482302-->
-
-
 Se l'albero è [[Albero binario#Albero binario quasi completo|quasi completo]], allora: $h \geq \lceil log_{2}(n+1)-1\rceil$

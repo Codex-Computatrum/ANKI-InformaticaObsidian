@@ -2,14 +2,14 @@
 author: Lorenzo Tecchia
 tags: [definition, dataStructure, to-do]
 ---
->[!todo] 
->- [ ] Implementazione in C
-
+### Definizione di Stack
 Uno ***stack*** è un tipo di dati astratto che viene usato per riferirsi a [[Struttura dati|strutture dati]], le cui modalità di accesso sono di tipo: **LIFO**, ovvero **Last In First Out**. L'ultimo elemento inserito è il primo ad essere eliminato.
 
-## Operazioni sulla struttura
+
+### Operazioni sulla struttura dati Stack
 Così come un numero di altre strutture dati, lo stack possiede tutte le [[operazioni elementari]].
 Solo che nel caso dello stack, le funzioni di $Insert$ e $Delete$ si chiamano rispettivamente $Push$ e $Pop$.
+
 
 | Nome           | Descrizione                                                                         |
 | ------------------- | ----------------------------------------------------------------------------------- |

@@ -44,6 +44,8 @@ r-p+1>\frac{p+r}{2}-p+1 \Longrightarrow 2 r>p+r \Longrightarrow r>p$$
 Essendo la nostra ipotesi proprio $p < r$ (condizione dell'`if`) abbiamo dimostrato la prima implicazione. Analogamente procede la seconda:$$
 r-p+1>r-\frac{p+r}{2} \Longrightarrow-p>-\left(\frac{p+r}{2}+1\right) \Longrightarrow 2 p<p+r+2 \Longrightarrow p<r+2$$
 Resta da dimostrare che, per qualsiasi input, l'algoritmo faccia un numero finito di chiamate ricorsive e che quindi, prima o poi, raggiungerà il caso base; quando `r` è molto vicino a `p`(ovvero quando $r < p +1$) è evidente che sarà $q = | \frac{p+r}{2}| = p$ e quindi entrambe le chiamate ricorsive non verranno effettuate (la condizione dell'`if` sarà dalla prima chiamata $p < p$ e alla seconda $p + 1 < r$, condizioni entrambe false).
+
+
 ### Occupazione in memoria
 
 ```python
@@ -60,6 +62,8 @@ def Merge(A, p, q, r):
 			j = j + 1 
 	if i < q:
 		j = i
+
+
 # Restano da copiare gli elementi della sequenza sinistra
 # In caso contrario non modifico j visto che l'indice è già corretto
 	while k <= r:
@@ -70,12 +74,16 @@ def Merge(A, p, q, r):
 ```
 ^Merge
 
+
+
 Il tempo di **Merge** è lineare poiché vado ad effettuare almeno $n$ scritture in memoria. È interessante notare che è stato necessario utilizzare un altro vettore $\rightarrow$ Questo significa che **MergeSort** ha bisogno di uno spazio aggiuntivo in memoria anch'esso lineare (un vettore pari all'input del programma oltre alle variabili locali) a causa dell'algoritmo **Merge**.
 
 Anche senza considerare **Merge** l'algoritmo MergeSort ha bisogno di uno spazio aggiuntivo a causa delle chiamate ricorsive $\rightarrow$ Per ogni chiamata ricorsiva, prima di chiamare alla chiamata figlia, è necessario salvare i dati sullo stack di attivazione.
 
 ### Tempo di esecuzione
 Sarebbe assurdo dover calcolare il valore del tempo di esecuzione della funzione se per farlo devo conoscere il tempo di esecuzione della funzione stessa.
+
+
 
 Ma visto che la funzione è definita in modo induttivo, è possibile calcolarla su input più piccoli, dunque, è possibile sfruttare la definizione induttiva e definire in maniera induttiva anche la funzione tempo.
 

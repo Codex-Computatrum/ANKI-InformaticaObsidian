@@ -39,12 +39,9 @@ def Init(G):
 > - $p\;\;$ Vettore dei predecessori: $\forall u \in V, p(u)=\text{predecessore}$
 
 ---
-## Complessità
+## Complessità del calcolo delle distanze
 Un vertice può non entrare in [[coda]], ma se entra lo farà una sola volta (data la colorazione).
 Nel caso peggiore entrano tutti vertici.
-
 Il $for each$ si traduce nella somma del numero di [[Adjacent|adiacenti]] di $u$, questo $\forall u \in V$ . Non stiamo facendo altro che contare gli archi $|E|= \sum_{u \in V}\Theta(|Adj[u]|) = |E|$
-
 Le istruzioni nel $while$ sono in $\Theta(1)$; come detto prima, nel caso peggiore entrano tutti i vertici, quindi il while si traduce nella $\sum_{u \in V}\Theta(1) = V$
-
 Nel totale avremo:$$\sum\limits_{u\in V}(\Theta(1) + \Theta(|Adj[u]|))= |V|+|E|=|G|$$

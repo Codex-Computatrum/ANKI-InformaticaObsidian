@@ -2,6 +2,7 @@
 author: Lorenzo Tecchia
 tags: [definition, dataStructure, to-do]
 ---
+### Definizione di lista
 Una **lista puntata** è un insieme dinamico in cui ogni elemento ha una chiave (*key*) ed un riferimento all'elemento successivo (*next*) dell'insieme.
 >[!important]
 > La lista è una struttura dati ad accesso strettamente sequenziale $\rightarrow$ Da ciò ne deriva un tempo lineare per tutti gli algoritmi che necessitano di una ricerca
@@ -9,6 +10,8 @@ Una ***lista*** $L$ è un oggetto con le seguenti proprietà:
 1. O è un insieme vuoto di nodi $\rightarrow L = \emptyset$
 2. Oppure contiene un nodo con un dato e un riferimento ad un oggetto $L'$ dove $L'$ è una lista (non c'è ambiguità poiché $|L'| < |L|$ per definizione)
 Da questa definizione induttiva risulta naturale scrivere algoritmi ricorsivi per implementare le operazioni sulla lista; infatti, per l'operazione di ricerca possiamo implementare il seguente algoritmi:
+
+
 
 ```python
 def Ricerca(L, k):
@@ -92,6 +95,8 @@ def CancellaPari(L):
 ```
 ^Cancella-Pari
 
+
+
 ```python
 # Restituisce il numero degli elementi pari cancellati
 # Visto che l'algoritmo non restituisce la lista ma un intero (che rappresenta il conteggio), abbiamo bisogno oltre al nodo da cancellare anche il suo precedente, in modo da poter ricostruire ala lista
@@ -107,6 +112,8 @@ def CancellaPariConta(L, Prev):
 	return counter
 ```
 ^Cancella-Pari-Conta
+
+
 
 ```python
 def CacncellaPariContaTesta(L):
