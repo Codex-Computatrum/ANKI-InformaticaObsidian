@@ -15,7 +15,6 @@ tags:
 		- Il MAX del ramo sinistro può avere al massimo il figlio destro che è più piccolo. Se avesse anche il figlio destro, non sarebbe il massimo
 	- Sposto il **MIN del ramo destro**
 		- Il Min del ramo destro può avere al massimo il figlio sinistro che è più grande. Se avesse anche il figlio sinistro, non sarebbe il massimo
-<!--ID: 1715263181645-->
 
 
 #### Esempio
@@ -39,7 +38,6 @@ Questa è la funzione che verrà chiamata per eliminare il nodo contente il dato
 	- In questo caso si procede con il MIN 
 - Sia $Skip$ che [[Minimo-Massimo#^get-delete-min|Get&Delete]] restituiscono un nodo a $DeleteNode$  
 - La funzione $DeleteNode$ restituirà un nodo che sarà restituito alla chiamata ricorsiva di $Delete$. Questo verrà inserito al posto del nodo da eliminare
-<!--ID: 1715263181646-->
 
 
 ```python 

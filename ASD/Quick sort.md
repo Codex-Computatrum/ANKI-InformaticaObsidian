@@ -21,7 +21,6 @@ Infatti il QuickSort decomporrà la sequenza in una maniera tale che alla fine s
 Con $a_{1} \leq a_{i+1}$, e quindi poiché entrambe le sottosequenze sono già ordinate e l'ultimo elemento della prima sequenza sia $\leq$ al primo elemento della seconda, la funzione dei $2$ è già ordinata 
 Il metodo utilizzato da QuickSort non riesce però a garantire che le $2$ sottosequenze contengano più o meno lo stesso numero di elementi e ciò va ad impattare sul tempo di esecuzione.
 Qualsiasi livello di [[ricorsione]] avrà da una parte una sequenza di $q$ elementi e dall'altro $n-q$ con tutti gli elementi della sottosequenza sinistra minori o uguali a quelli dell'altra sottosequenza.
-<!--ID: 1715263181541-->
 
 
 ```python
@@ -54,7 +53,6 @@ Se `Partition`, si comporta come descritto, **QuickSort** è corretto sotto le s
  - Al termine di `Partition(A, p, r)` vale che:$$
 \forall i: p \leq i \leq q \wedge \forall j: q+1 \leq j \leq r, A[i] \leq A[j]$$
 ***qualunque elemento prendo a sinistra, esso è minore o uguale di qualunque elemento che prendo a destra***
-<!--ID: 1715263181542-->
 
 
 Ed è chiaro che queste proprietà siano fondamentali sia per il ragionamento di ipotesi induttiva (le prime due priorità) e sia per il fatto di non dover fare nessun merge alla fine (l'ultima)
@@ -69,7 +67,6 @@ Ed è chiaro che queste proprietà siano fondamentali sia per il ragionamento di
  Quindi `Partition` deve garantire $2$ proprietà:
  1. $p \leq q < r$ (per il motivo descritto precedentemente)
  2. $\forall i : p \leq i \leq q \;\land\; \forall j: q +1 \leq j \leq r, A[i] \leq A[j]$(Scontato, in quanto non è che sia ha la certezza che la sequenza totale sia già ordinata)
-<!--ID: 1715263181543-->
 
 
 ### Algoritmo Partition
@@ -80,7 +77,6 @@ Dunque per semplicità prenderemo direttamente il primo elemento della sequenza.
 Per scorrere la sequenza avrò due indici, $i$ che partirà da sinistra  e $j$ che partirà da destra. Il primo indice $i$ si sposterà a destra fintanto che troverà un valore $y \geq x$ (i valori minori sono già nella posizione giusta), mentre $j$ verrà decrementato fino a quando non sarà su un valore $z \leq  x$ (quel valore dovrà andare nella sottosequenza di sinistra). Una volta che si sono fermati entrambi gli indici e $i < j$ scambierà i valori e ripeterà il processo fino a quando gli indici si incroceranno $i \geq j$.
 ![[Pasted image 20231121150437.png]]
 Nello scrivere l'algoritmo utilizzeremo il ciclo `REPEAT ... UNTIL`(condizione), questo ripeterà il blocco interno (fa almeno una iterazione) fino a quando la condizione non è verificata
-<!--ID: 1715263181544-->
 
 
 
@@ -107,12 +103,10 @@ def Partition(A, p, r):
 ### Correttezza dell'algoritmo Partition in QuickSort
 Per confermare la correttezza di questo algoritmo si veda se all'instante in cui viene eseguita la linea $15$ si ha $p \leq j < r$ poiché questo ci assicurerà la validità della prima proprietà necessaria per la correttezza di `QuickSort`, ovvero $p \leq j < r$
 A tal proposito, dobbiamo dimostrare che i casi $j < p$ e $j \geq r$ siano impossibili; per fare ciò basta controllare che non si verificano i casi $j=p-1$ (essendo $i=p-1$ è l'unico $j<p$ che potrebbe verificarsi vista la scrittura del nostro algoritmo) e $j = r$(anche se $h=r+1$ all'inizio, viene per forza decrementato una volta).
-<!--ID: 1715263181545-->
 
 
 #### Analisi del caso $j=r \rightarrow$ nell'algoritmo Partition
 Sappiamo che $j$ viene decrementato almeno una volta e non riceve mai incrementi. Affinché sia $j=r$ significa che siamo al **primo** ciclo di iterazione del `REPEAT`esterno; bisogna quindi dimostrare che $i$ non arrivi mai ad $r$, poiché è l'unico modo che ha per uscire dal ciclo con $j=r$. Visto che siamo alla prima iterazione allora $i=p-1$ e al primo incremento di $i$ non abbiamo ancora fatto scambi. Dunque $x$ (il pivot). è ancora in prima posizione, ma allora al primo incremento di $i$ esco subito dal ciclo essendo $i=p$ e $A[i] = x$. A questo punto $i < j$ e quindi eseguo la riga $13$ (non si è ancora verificata la condizione di $i \geq j$). Ne consegue che devo fare almeno un'altra iterazione del blocco con la conseguenza che $j < r$.
-<!--ID: 1715263181546-->
 
 
 
@@ -129,7 +123,6 @@ Che rappresenta la seconda proprietà che volevamo garantire:$$
 \forall i: p \leq i \leq q \wedge j: q+1 \leq j \leq r, A[i] \leq A[j]$$
 >[!note]
 > È facile osservare che se richiedessi il $<$ invece del $\leq$ (analogamente $>$ al posto di $\geq$) non riuscirei più a garantire la prima proprietà che deve verificarsi al termine di `Partiziona` per la correttezza di ***QuickSort***
-<!--ID: 1715263181547-->
 
 
 ## [[Analisi asintotica|Analisi]] di QuickSort
@@ -158,14 +151,12 @@ Dimostriamo per induzione sull'altezza dell'albero che vale $n_{f} = n_{i}+1$
 ![[Pasted image 20231121174644.png|300]]
 Il numero di nodi interni nell'albero radicato in $x$ sarà evidentemente $n_{i}= n_{i_{sx}} + n_{i_{dx}} + 1$(la radice).
 Mettendo insieme i precedenti ragionamenti, risulta:$$n_f=\underbrace{n_{i_{s x}}}_{n_{f s x}}+1+\underbrace{n_{i_{d x}}}_{n_{f d x}}+1=\underbrace{n_{i_{s x}}+n_{i_{d x}}+1}_{n_i}+1$$
-<!--ID: 1715263181548-->
 
 
 ### Analisi asintotica del caso medio di QuickSort
  Prendiamo l'albero di ricorrenza del caso peggiore e andiamo a calcolare il contributo di ogni livello:
 ![[Pasted image 20231121175339.png|250]]
  Da questa rappresentazione ricaviamo che il contributo di un livello $l \geq 1$ è $n-l +1$ di conseguenza:$$T(n)=\underbrace{n}_{l=0}+\sum_{l=1}^n(n-l+1)=\Theta\left(n^2\right)$$
-<!--ID: 1715263181549-->
 
 
 ### Analisi asintotica del caso peggiore di QuickSort
@@ -175,7 +166,6 @@ Quindi $T(n) = \sum\limits_{l=0}^{h}n$ con $h$ altezza di un albero completo e q
 Il tempo di esecuzione dipende quindi dall'altezza e non potendo sommare più un numero lineare di libelli (essendo l'altezza dell'albero peggiore $n$) il caso peggiore è ovviamente $\Theta(n^{2})$ mentre il migliore (parliamo dell'albero con altezza minima) è un $\Theta(n log(n))$.
 Allo stato attuale non possiamo nemmeno affermare che questo algoritmo sia migliore di `InsertionSort`, il quale aveva un caso migliore addirittura lineare. Bisogna dunque calcolare la media tra caso migliore e peggiore, ma non possiamo farlo semplicemente con una media aritmetica tra come in `InsertionSort`.
 Decomponiamo il problema sapendo che ad ogni livello di ricorsione l'algoritmo si occupa di scegliere, tramite `Partition`, su una certa istanza il valore di $q$ e quindi ogni nodo sceglie localmente un valore di $q$; fissato quest ultimo verranno generati i due sottoproblemi con dimensione $q$ e $n-q$.
-<!--ID: 1715263181550-->
 
 
 
@@ -211,9 +201,7 @@ Si noti che $\sum\limits_{q=1}^{n-1}(T_{M}(q))$ e $\sum\limits_{q=1}^{n-1}(T_{M}
 T_M(n) & =\frac{1}{n}\left(O\left(n^2\right)+2 \sum_{q=1}^{n-1} T_M(q)+\sum_{q=1}^{n-1} \Theta(n)\right)=\frac{1}{n}(\underbrace{O\left(n^2+\Theta\left(n^2\right)\right)}_{\Theta\left(n^2\right)}+2 \sum_{q=1}^{n-1} T_M(q)) \\
 & =\frac{\Theta\left(n^2\right)}{n}+\frac{2}{n} \sum_{q=1}^{n-1} T_M(q)=\Theta(n)+\frac{2}{n} \sum_{q=1}^{n-1} T_M(q)
 \end{aligned}$$
-<!--ID: 1715263181551-->
 
 
 ### Conclusioni su QuickSort
 Abbiamo dimostrato che nel caso medio `QuickSort` ha un comportamento ottimo $\rightarrow$ Il tempo di esecuzione è quasi sempre $\Theta(n\log(n))$ rendendo nella pratica uno dei migliori algoritmi di ordinamento.
-<!--ID: 1715263181552-->

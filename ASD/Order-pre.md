@@ -16,7 +16,6 @@ def DFVPre(X, F, a):
 	return a
 ```
 ^DFV-PreOrder
-<!--ID: 1715263181566-->
 
 
 

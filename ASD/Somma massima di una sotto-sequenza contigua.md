@@ -16,7 +16,6 @@ ___Output $\rightarrow$___
 - Tutti gli elementi nella sommatoria devono essere contigui nella sequenza dell'input
 - **L'output del precedente esempio** $\rightarrow \;\; 8 +3 -5+4+6 = 16$ 
 ---
-<!--ID: 1715263181529-->
 
 ### Soluzione 1 (naive) al problema della massima sottosequenza
 Un primo approccio potrebbe essere quello di trovare la somma di tute le sotto-sequenze e restituire la maggiore.
@@ -25,7 +24,6 @@ Abbiamo quindi decomposto il problema in:
 - Generare tutte le sotto-sequenze
 - Sommare tutti gli elementi di una sotto-sequenza
 Si noti che poiché il valore di una sotto-sequenza vuota è $0$, possiamo dire con certezza che $V \geq 0$ per qualsiasi sotto-sequenza.
-<!--ID: 1715263181530-->
 
 
 
@@ -87,7 +85,6 @@ Ma $\sum\limits_{k=1}^{j-1}A[k]$ è la quantità gia presente in `SUM` ed è qui
 La suddetta osservazione non può essere utilizzata così come è $\rightarrow$ Bisogna comprendere quando azzerare `SUM` e sotto quali condizioni si può sfruttare il 
 precedente algoritmo
 Fintanto che l'indice resta `i` resta sempre lo stesso si vuole aggiornare il precedente valore di `SUM`, mentre quando varia allora `SUM` va azzerato poiché ci si trova in una nuova sotto-sequenza.
-<!--ID: 1715263181531-->
 
 
 
@@ -133,7 +130,6 @@ Dopo queste analisi è abbastanza intuitivo che il codice seguente avrà comples
 1. Se $\mathbb{SUM}(i, j) \geq 0$ allora è lo stesso $i$ e incremento $j$
 2. Se $\mathbb{SUM}(i, k) < 0$ allora parto direttamente da $j + 1$ e vado avanti
 Dunque, i salti sono giustificati dalla proprietà $2$ e il fatto di non dover esaminare le sequenze intermedie della proprietà $1$. Ma allora l'algoritmo finale sarà il seguente:
-<!--ID: 1715263181532-->
 
 
 ```python

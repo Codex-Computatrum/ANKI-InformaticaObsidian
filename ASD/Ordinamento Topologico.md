@@ -14,14 +14,12 @@ Quindi, un ordinamento topologico è un percorso $\pi \in Perm(V)$, di consegue
 $$\exists i,j \in [0, |V|), i < j \;:\;\pi_{i}= v \; \land\; \pi_{j}=w$$
 >[!important] 
 > Non può esistere un ordinamento topologico se il grafo ha dei cicli, deve **essere [[Aciclicità|aciclico]]**
-<!--ID: 1715263181558-->
 
 
 ### Teorema sull'ordinamento topologico
 Se $G$ è aciclico allora esiste un **ordinamento topologico**
 >[!important] 
 >$$G\;\text{aciclico} \iff \exists \;\text{un ordinamento per}\; G$$
-<!--ID: 1715263181559-->
 
 
 
@@ -40,7 +38,6 @@ Supponiamo che non esistono vertici senza archi entranti.
 	1. sono finiti i nodi e in una permutazione non possono esserci ripetizioni
 	2. se pure ci fosse una ripetizione, si formerebbe un ciclo
 Ma dato che il grafo è aciclico e finito, $v_k$ non ha archi entranti, il ché va in contraddizione con quanto supposto prima.
-<!--ID: 1715263181560-->
 
 
 ---
@@ -52,12 +49,10 @@ $$G \;\text{acicliclo} \land G′ ⊑ G ⇒ G′ \;\text{è aciclico}$$
 2. Per definizione di sotto-grafo, gli archi di $G′$ sono anche archi di $G$.  
 3. Ciò vuol dire che se $G′$ ha dei cicli, anche $G$ avrà quegli stessi cicli e questo va in contraddizione con quanto supposto prima
 ---
-<!--ID: 1715263181561-->
 
 ### Idea generale dell'algoritmo sull'ordinamento topologico in ampiezza
 Dato un grafo $G$, la funzione restituisce una lista $\pi$ di vertici di $G$ che rappresenta un ordinamento topologico.
 Restituisce solo un ordinamento dei tanti che potrebbero esserci.
-<!--ID: 1715263181562-->
 
 
 
@@ -66,7 +61,6 @@ Restituisce solo un ordinamento dei tanti che potrebbero esserci.
 Si definisce **grado entrante** del vertice $v$, il numero di archi entranti in $v$
 $$gr(v) \triangleq |\{\forall w \in V\;|\;(v,w)\in E\}|$$
 Quando un nodo ha $0$ archi entranti, non è vincolato da nessun altro nodo, può essere quindi inserito nella lista $\pi$. Possiamo immaginare che il nodo appena inserito in $\pi$ sia stato anche eliminato dal grafo, di conseguenza i gradi dei nodi adiacenti diminuiscono di $1$.
-<!--ID: 1715263181563-->
 
 
 
@@ -125,7 +119,6 @@ È possibile calcolare un ordinamento topologico anche usando una $\textbf{DFS}
 In questo caso non viene restituita una lista ma uno stack.  
 La funzione inserisce nello stack a partire dal nodo più vincolato, quindi dall’ultimo che avremo nell’ordinamento.
 Inserendolo in uno stack, quando lo si andrà leggere, lo si leggerà in maniera ordinata.
-<!--ID: 1715263181564-->
 
 
 

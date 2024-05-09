@@ -6,7 +6,6 @@ tags:
 ---
 ## Notazione
 La notazione che usiamo per descrivere il tempo di esecuzione asintotico di un algoritmo sono definite in termini di funzioni il cui dominio è l'insieme dei numeri naturali $\mathbb{N} = \{0,1,2,\dots\}$. 
-<!--ID: 1715263181657-->
 
 
 Tali notazioni sono comode per descrivere la funzione $T(n)$, tempo di esecuzione nel caso peggiore, che di solito è definita soltanto con dimensioni intere dell'input.
@@ -31,7 +30,6 @@ In particolare $f$:
 $$O(g(n))= \left\{ f(n): \exists c \in \mathbb{R}^{+}\;\; \land \;\; \exists n_{0}\in \mathbb{N} \; \text{tale che}\; \forall n\geq n_{0}, f(n)\leq c\;g(n)\right\}$$^O-grande
 >[!hint] In altre parole
 > $O(g(n))$ limita superiormente $f(n)$
-<!--ID: 1715263181658-->
 
 
 
@@ -43,7 +41,6 @@ $$O(g(n))= \left\{ f(n): \exists c \in \mathbb{R}^{+}\;\; \land \;\; \exists n_{
 $$\varOmega(g(n))= \left\{ f(n): \exists c \in \mathbb{R}^{+}\;\; \land \;\; \exists n_{0}\in \mathbb{N} \; \text{tale che}\; \forall n\geq n_{0}, f(n)\geq c\;g(n)\right\}$$
 >[!hint] In altre parole
 > $\varOmega(g(n))$ limita inferiormente $f(n)$
-<!--ID: 1715263181659-->
 
 
 
@@ -57,7 +54,6 @@ Infatti il $\lim_{n \rightarrow \infty}\frac{f(n)}{g(n)} = L$
 ![[Pasted image 20230905174711.png]]
 >[!important] In altre parole
 > $\Theta(g(n))$ limita sia superiormente che inferiormente $f(n)$
-<!--ID: 1715263181660-->
 
 
 
@@ -72,7 +68,6 @@ Supponiamo a tal scopo che $\lim_{n \rightarrow \infty}\frac{f(n)}{g(n)} = k$ e 
 Per tale asintoto esistono solo $2$ casi:
 1. $h(n)$ tende a $k$ dall'alto
 2. $h(n)$ tende a $k$ dal basso
-<!--ID: 1715263181661-->
 
 
 
@@ -83,7 +78,6 @@ Prendiamo ora la retta costante pari al valore di $h(n_{0})$, ed ora possiamo os
 ![[Pasted image 20231116164426.png|250]]
 >[!note]
 > Le precedenti costanti sono state trovate avendo supposto che il rapporto $\frac{f(n)}{g(n)}$ esista e che la funzione (dopo lo studio della derivata prima di tale rapporto) sia decrescente per un intervallo $[n_{0}, +\infty)$
-<!--ID: 1715263181662-->
 
 
 
@@ -97,7 +91,6 @@ infatti per $c_{2}$ è ovvio che basti prendere l'asintoto $k$ mentre per $c_{1}
 >[!note]
 > Si noti che stavolta non basta solo che l'intervallo $[n_{0}, \infty)$ sia crescente, ma deve anche essere sempre positiva (scegliere un punto in cui $\exists n \leq n_{0}\;\;:\;\; h(n)$ sia negativa andrebbe contro la nostra definizione di $\Theta$)
 > Una volta determinato $n_{0}$, allora: $$c_{1}= h(n_{0})$$
-<!--ID: 1715263181663-->
 
 
 
@@ -109,7 +102,6 @@ Se la situazione è quella della rappresentazione nella [[Analisi asintotica#^ca
 ![[Pasted image 20231116170752.png|250]]^caso-oscillatorio
 >[!important]
 > Questo tipo di funzioni sono molto rare e pertanto nei nostri studi ci imbatteremmo solo nei primi due casi
-<!--ID: 1715263181664-->
 
 
 
@@ -133,7 +125,6 @@ $$o(g(n))= \left\{ f(n): \forall c \in \mathbb{R}^{+}\;\; \land \;\; \exists n_{
 - Quindi se $f(n)$ è $o$ piccolo di $g(n)$, è anche $O$ grande di $g(n)$
 $o(g(n))$ limita superiormente $f(n)$
 Infatti il $\lim_{n \rightarrow 0} \frac{f(n)}{g(n)} = 0$ perché, al limite, $g(n)$ cresce più velocemente
-<!--ID: 1715263181665-->
 
 
 ### Notazione $\omega$ piccolo
@@ -144,18 +135,15 @@ $$\omega(g(n))= \left\{ f(n): \forall c \in \mathbb{R}^{+}\;\; \land \;\; \exist
 - Quindi se $f(n)$ è $\omega$ piccolo di $g(n)$, è anche $\varOmega$ grande di $g(n)$
 $\omega(g(n))$ limita inferiormente $f(n)$
 Infatti il $\lim_{n \rightarrow 0} \frac{f(n)}{g(n)} = \infty$ perché, al limite, $g(n)$ cresce più lentamente
-<!--ID: 1715263181666-->
 
 
 ### Quali notazioni asintotiche godono della proprietà riflessiva?
 - $f(n)$ = $O(f(n))$
 - $f(n)$ = $\varOmega(f(n))$
 - $f(n)$ = $\Theta(f(n))$
-<!--ID: 1715263181667-->
 
 ### Quali notazioni asintotiche godono della proprietà simmetrica?
 ![[Pasted image 20230905183705.png|500]]
-<!--ID: 1715263181668-->
 
 
 
@@ -192,7 +180,6 @@ $$
 > Scegliendo $c_{2}= 1$ abbiamo:$$n^{2}-3n + 4 \leq n^{2}, \text{verificata per }n \geq \frac{4}{3}$$ mentre per $c_{1} = \frac{1}{2}$ si ha $\frac{n^{2}}{2} \leq n^{2}-3n +4 \iff 0 \leq \frac{n^{2}}{2}- 3n +4 \iff 3n -4 \leq \frac{n^{2}}{2}\;\; \text{verificata per}\;\; \forall n \geq 1$
 > Analogamente si tratta il caso $g(n) = O(h(n))$ e di conseguenza si ha anche che $f(n) = O(h(n))$
 > Questo esempio è banale, in quante fin dall'inizio si vedeva che le $2$ funzioni crescessero allo stesso modo, ma per funzioni esponenziali o logaritmiche potrebbe non esserlo, e quindi, risulta utile applicare questa proprietà transitiva come fatto in questo esempio
-<!--ID: 1715263181669-->
 
 
 
@@ -200,7 +187,6 @@ $$
 $$f(n) = \Theta(g(n)) \Longrightarrow \log(f(n)) = \Theta(\log(g(n)))$$
 Per dimostrare la precedente implicazione utilizziamo la proprietà della monotonicità dei logaritmi, ovvero:$$x \leq x \Longrightarrow log(x) \leq \log(x)$$
 Da $f(n) = \Theta(g(n))$ per definizione $\exists n_{0}, c_{1},c_{2}: \forall n \geq n_{0},\;\; c_{1}g(n) \leq f(n) \leq c_{2}g(n)$ ma quindi:$$\log(c_{1}g(n)) \leq \log(f(n)) \leq \log(c_{2}g(n))$$
-<!--ID: 1715263181670-->
 
 
 
@@ -232,5 +218,4 @@ Quindi l'implicazione è dimostrata sotto la supposizione che $\forall h(n), \;\
 
 ###  Di quali altre proprietà godono le notazioni asintotiche?
 ![[Pasted image 20230905183946.png|600]]
-<!--ID: 1715263181671-->
 

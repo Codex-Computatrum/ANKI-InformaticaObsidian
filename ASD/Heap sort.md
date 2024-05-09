@@ -63,7 +63,6 @@ Una volta trasformata la sequenza in un max-heap, all’interno del for della fu
 Così facendo si sposta il massimo alla fine del vettore, però c’è bisogno di eseguire _Heapify_ perché all’indice $0$ è stato inserito un valore potenzialmente scorretto; quindi bisogna rendere nuovamente_ max-heap_ l’intero albero ma escludendo di volta in volta gli elementi posizionati correttamente.
 Viene chiamata _Heapify_ con il parametro $n=i$, ovvero l’altezza dell’albero meno uno (quindi si escludono gli elementi posizionati correttamente).
 Invece il parametro $i$ (ovvero la radice dalla quale partire per costruire un heap) sarà sempre $0$ perché si deve ricostruire l’intero albero.
-<!--ID: 1715263181597-->
 
 
 ### Complessità di Heapify
@@ -73,7 +72,6 @@ Quindi scorre l’intero albero in altezza ad ogni chiamata, ovvero $log(i)$
 _Heapify_ viene chiamata $n − 1$ volte nel for:
 $$\sum^{n-1}_{i=1}\log(i)= \log{(\prod^{n-1}_{i}i)}= \log((n-1)!)$$ applichiamo l'[approssimazione di stirling](https://it.wikipedia.org/wiki/Approssimazione_di_Stirling)
 $$=\log(\sqrt{2\pi n }(\frac{n}{e})^{n})= \log(\sqrt{2\pi}(\sqrt{n})(\frac{n^{n}}{e^{n}}))= \log(\sqrt{2\pi}) + \frac{1}{2}\log(n)+n\log(n)- n\log(e)$$
-<!--ID: 1715263181598-->
 
 
 
@@ -86,4 +84,3 @@ $=\left[\frac{n}{4} \sum_{i=1}^k \frac{d}{d x} x^i\right]_{x=\frac{1}{2}}=\left[
 $=\left[\frac{n}{4} \frac{d}{d x} \sum_{i=1}^{\infty} x^i\right]_{x=\frac{1}{2}}=\left[\frac{n}{4} \frac{d}{d x} \frac{1}{1-x}\right]_{x=\frac{1}{2}}=\left[\frac{n}{4} \frac{1}{(1-x)^2}\right]_{x=\frac{1}{2}}=\frac{n}{4} \cdot 4=n$
 >[!Importante] 
 >Il costo dell’intero algoritmo sarà quindi $O(n \log(n))$
-<!--ID: 1715263181599-->

@@ -21,7 +21,6 @@ Un **PBT** è l'albero più basso possibile, con altezza al più $\lfloor \log_{
 Con l’aggiunta di un nodo bisogna riposizionare i nodi affinchè l’albero rimanga perfettamente bilanciato.
 In generale conviene usare i **PBT** se gli algoritmi che utilizzeremo lo scorrono in altezza $\log(n)$; come detto prima, un **PBT** è l’albero più basso possibile.
 Esistono diversi tipi di PBT, uno di questi sono gli **[[Albero binario autobilanciante|AVL]]**
-<!--ID: 1715263181691-->
 
 
 ---

@@ -13,14 +13,12 @@ Dato un [[grafo]] [[orientato]] [[Cycle|ciclico]], si richiede di identificare l
 
 ### Definizione di grafo fortemente connesso
 Nella teoria matematica dei grafi diretti, un grafo è detto fortemente connesso se ogni vertice è raggiungibile da ogni altro vertice. I componenti fortemente connessi di un grafo diretto arbitrario formano una partizione in sottografi che sono essi stessi fortemente connessi. È possibile testare la forte connettività di un grafo, o trovare i suoi componenti fortemente connessi, in tempo lineare (cioè, $Θ(V + E)$).
-<!--ID: 1715263181648-->
 
 
 ---
 
 ### Come è possibile verificare se un grafo sia connesso?
  Per verificare che un grafo sia connesso, possiamo effettuare una [[Depth First Search|DFS]] (o una [[Breadth First Search|BFS]]) e verificare che nell'array dei predecessori non vi esistano due vertici con predecessori a `NULL`.
-<!--ID: 1715263181649-->
 
 
 In questo esempio sono cerchiate le componenti fortemente connesse.
@@ -51,13 +49,11 @@ La visita in $G^T$ viene fatta sui vertici nello stack $S$ (dalla $\textbf{DFS}$
 	- ***Le viste terminano***
 - E così via per tutti gli altri nodi
 Se non avessimo trasposto il grafo, nella prima visita, il nodo $a$ avrebbe trovato $b$ e $c$ come archi uscenti e il risultato sarebbe stato sbagliato.
-<!--ID: 1715263181650-->
 
 
 ## Algoritmi
 >[!important] 
 >$$G=<V,E>\;\;\;G^{T}=<V,E^{-1}>$$
-<!--ID: 1715263181651-->
 
 
 ```Python
@@ -104,7 +100,6 @@ Ad esempio, la componente $j, k, l, m$ ha come rappresentate $j$ solo perché c
 - $scc(k):j\;\;\;\;\;k$ si trova nella componente con rappresentante $j$
 - $scc(l):j\;\;\;\;\;l$ si trova nella componente con rappresentante $j$
 - $scc(m):j\;\;\;\;\;m$ si trova nella componente con rappresentante $j$
-<!--ID: 1715263181652-->
 
 
 

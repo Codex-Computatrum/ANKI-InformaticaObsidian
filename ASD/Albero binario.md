@@ -13,7 +13,6 @@ Un'[[Tree|albero]] si dice **binario** se ogni nodo ha al massimo due figli.
 >Un albero binario è un ottimo compromesso tra un array e una [[lista concatenata]]
 >	L'array è rigido ma poco flessibile
 >	La lista è il viceversa
-<!--ID: 1715263181696-->
 
 
 
@@ -26,13 +25,11 @@ Un'[[Tree|albero]] si dice **binario** se ogni nodo ha al massimo due figli.
 	- **[[Order-pre|pre-order]]**: viene visato prima il padre, poi il sinistro, poi il destro
 	- **[[Order-in|in-order]]**: viene visitato prima il figlio sinistro, poi il padre, poi il destro
 	- **[[Order-post|post-order]]**: viene visato prima il figlio sinistro, poi il destro, poi il padre
-<!--ID: 1715263181697-->
 
 
 
 ### Come scegliere il modo più adatto col quale scorrere un albero?
 Dipende dal dominio di applicazione dell'albero e di conseguenza da quale forma assumerà
-<!--ID: 1715263181698-->
 
 
 Se l'albero tende ad essere **basso e ampio**, conviene uno scorrimento in profondità; la cui complessità sarà $O(n)$ o $\log(n)$ dove $h$ è l'altezza e $n$ è il numero di nodi
@@ -46,12 +43,10 @@ Un albero binario si dice anche **completo** se:
 - Tutte le foglie sono al livello h o al livello h - 1
 - Tutti i nodi interni hanno grado 2 tranne al più 1
 ^albero-binario-completo
-<!--ID: 1715263181699-->
 
 
 ### Definizione di foglia in un albero
  Un nodo si dice foglia quando non ha figli _alternativamente quando il suo grado è uguale a 1_
-<!--ID: 1715263181700-->
 
 
 #### Numero di nodi di un albero binario completo
@@ -59,7 +54,6 @@ $$n = 2^{h + 1} - 1$$
 Dove $h$ è l'[[Altezza|altezza]] dell'albero.
 Ogni nodo ha due figli, quindi all'$i$-esimo livello ci saranno $2^{i}$ figli.
 Quindi l'intero albero avrà: $n = \sum^{h}_{i=0}2^{i}$ nodi 
-<!--ID: 1715263181701-->
 
 
 Questa è la somma dei primi $h$ termini di una serie geometrica di ragione 2
@@ -75,6 +69,5 @@ Un albero binario si dice **quasi completo** se:
 - è pieno fino al penultimo livello
 - i nodi dell'ultimo livello sono inseriti da sinistra a destra
 ![[Pasted image 20230828171123.png]]
-<!--ID: 1715263181702-->
 
 

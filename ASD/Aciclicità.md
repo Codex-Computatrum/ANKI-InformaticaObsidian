@@ -19,7 +19,6 @@ def Acyclic(G):
 	return True
 ```
 ^acyclic
-<!--ID: 1715263181711-->
 
 
 
@@ -49,5 +48,4 @@ def DFSAciclic(G, v, color):
 - se il nodo adiacente $w$ è **grigio**, allora è stato incontrato un nodo che è stato già visitato durante la discesa, ***quindi è stato trovato un ciclo***
 - Nel caso migliore, impiega tempo costante $\varOmega(1)$ 
 - Nel caso peggiore, impiega $O(|G|)$
-<!--ID: 1715263181712-->
 

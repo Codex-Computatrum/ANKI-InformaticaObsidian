@@ -13,7 +13,6 @@ tags: [definition, dataStructure, to-do]
 - **Lista circolare doppiamente puntata**$\rightarrow$ Insieme dinamico che ha:
 	- Una chiave (*key*), un riferimento (*next*) all'elemento successivo dell'insieme e un riferimento (*prev*) all'elemento precedente dell'insieme
 	- L'ultimo elemento ha un riferimento (*next*) alla testa della lista, il primo ha un riferimento (*prev*) alla coda della lista,
-<!--ID: 1715263181513-->
 
 
 

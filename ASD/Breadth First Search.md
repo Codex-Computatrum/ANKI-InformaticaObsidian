@@ -9,7 +9,6 @@ aliases:
 
 ### Definizione di BFS
 **Breadth-first search** (**BFS**) è un [[algoritmo]] per cercare in una [[struttura dati]] [[Graph|grafo]] in [[Visita in ampiezza|ampiezza]] un nodo che soddisfi una certa proprietà.
-<!--ID: 1715263181653-->
 
 
 
@@ -60,7 +59,6 @@ def BFS_Modified(G, v):
 		color[v] = N
 ```
 ^BFS-Modified
-<!--ID: 1715263181654-->
 
 
 
@@ -78,7 +76,6 @@ La funzione ***BFS*** quindi prende in ingresso il grafo e il nodo dal quale par
 4. Devo visitare la stella uscente del nodo $v$ in testa alla coda, quindi lo estraggo. per visitarlo.
 5. Dovrò visitare ogni nodo $u$ adiacente al nodo $v$ appena estratto, a patto che questo sia bianco. Quindi, se $u$ è bianco, lo inserisco in coda e imposto il suo colore a grigio.
 6. Una volta tutta la stella uscente di $v$, ho finito di visitarlo, quindi imposto il colore a nero.
-<!--ID: 1715263181655-->
 
 
 ### Quali sono le proprietà sui nodi che ci permette di calcolare una BFS?
@@ -92,4 +89,3 @@ Se $v$ raggiunge $u$ , allora vuol dire che $u$ è **nero**
 Si può estendere l’algoritmo per:  
 - calcolare la [[Calcolo delle distanze|distanza dal nodo di partenza]] a tutti gli altri nodi
 - calcolare il percorso con [[Lunghezza minima|lunghezza minima]].
-<!--ID: 1715263181656-->

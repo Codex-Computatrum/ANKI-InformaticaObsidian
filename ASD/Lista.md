@@ -10,7 +10,6 @@ Una ***lista*** $L$ è un oggetto con le seguenti proprietà:
 1. O è un insieme vuoto di nodi $\rightarrow L = \emptyset$
 2. Oppure contiene un nodo con un dato e un riferimento ad un oggetto $L'$ dove $L'$ è una lista (non c'è ambiguità poiché $|L'| < |L|$ per definizione)
 Da questa definizione induttiva risulta naturale scrivere algoritmi ricorsivi per implementare le operazioni sulla lista; infatti, per l'operazione di ricerca possiamo implementare il seguente algoritmi:
-<!--ID: 1715263181583-->
 
 
 
@@ -96,7 +95,6 @@ def CancellaPari(L):
 	return L
 ```
 ^Cancella-Pari
-<!--ID: 1715263181584-->
 
 
 
@@ -116,7 +114,6 @@ def CancellaPariConta(L, Prev):
 	return counter
 ```
 ^Cancella-Pari-Conta
-<!--ID: 1715263181585-->
 
 
 
