@@ -14,6 +14,8 @@ Un albero **red-black** è un [[albero binario di ricerca]] con un bit aggiuntiv
 Inoltre i dati sono presenti solo nei nodi interni:
 - Le foglie non contengono dati (contengono il valore `NULL`), sono quindi tutte identiche
 - I genitori delle foglie punteranno tutti ad un unico nodo `NULL` cosi da evitare spreco di memoria.
+<!--ID: 1715263181677-->
+
 
 ### Vincoli sugli alberi red-black
 1. Tutti i nodi sono o **rossi** o **neri**
@@ -34,6 +36,8 @@ $$\forall \; T \in T, \;\exists \; h\; \in \mathbb{N}:\; \forall \;\pi\; \in \;P
 > > [!danger]
 > > Ogni albero AVL è RB
 ---
+<!--ID: 1715263181678-->
+
 
 
 ### [[Altezza]] nera 
@@ -46,10 +50,14 @@ Il numero di nodi interni è: (Internal Nodes) $IN(T) \geq 2^{bh(h)}-1$
 >[!Osservazione]
 > Il numero di nodi in un albero binario è $2^{h+1} − 1$ , escludendo le foglie: $2^{h} − 1$
 ![[Pasted image 20230831183814.png]]
+<!--ID: 1715263181679-->
+
 
 ---
 ### Teorema albero red-black
 ![[appuntiIngenito.pdf#page=45]]
+<!--ID: 1715263181680-->
+
 
 ---
 ## Idea generale sull'inserimento di un nodo in un albero red-black e le possibili violazioni dei vincoli
@@ -74,6 +82,8 @@ Essendo colorato di rosso:
 		- si effettua quindi una $LRRotation(T)$
 	- ![[Pasted image 20230901101046.png|600]]
 ---
+<!--ID: 1715263181681-->
+
 ##  Idea generale sulla cancellazione di un nodo in un albero red-black
 La cancellazione di un nodo **rosso** non crea problemi, perché questo avrà padre **nero** e figli **neri**, quindi al più si sono collegati due nodi **neri**.
 Invece, la cancellazione di un nodo **nero** porta ad uno sbilanciamento dell’**altezza nera**.
@@ -83,6 +93,8 @@ Ovvero, il figlio del nodo da eliminare (a seconda del caso $SkipRight$ o $SkipL
 - se è nero, diventa un doppio nero
 Cosi facendo, l’altezza rimane bilanciata.  
 Il colore doppio nero però va rimosso; sono $4$ i casi possibilià
+<!--ID: 1715263181682-->
+
 
 ### Primo caso - cancellazione rb
 il fratello $z$, del doppio nero $y$, è rosso  
@@ -90,6 +102,8 @@ il fratello $z$, del doppio nero $y$, è rosso
  - coloro $z$ di nero
  - RLRotation($x$)
  - ![[Pasted image 20230901101836.png|600]]
+<!--ID: 1715263181683-->
+
 
 
  
@@ -105,6 +119,8 @@ il fratello $z$, del doppio nero $y$, è nero e $z$ ha entrambi i figli neri
  • Avendo colorato di rosso il figlio destro di $x$, l’altezza nera a destra si abbassa di $1$
  Se $x$ dovesse essere ricolorato come doppio nero, il problema verrà risolto risalendo la ricorsione.
  ![[Pasted image 20230902153330.png]]
+<!--ID: 1715263181684-->
+
 
 ### Terzo caso - cancellazione rb
  il fratello $z$, del doppio nero $y$, è nero e $z$ ha il sinistro rosso e il destro nero
@@ -113,6 +129,8 @@ il fratello $z$, del doppio nero $y$, è nero e $z$ ha entrambi i figli neri
  - Coloro $u$ di nero e $z$ di rosso
  Questo sia per bilanciare l’[[Albero red-black#Altezza nera|altezza nera]], sia per non avere il problema rosso-rosso con il padre $T$ nel caso fosse rosso, ma anche perché è l’obiettivo (avere il rosso a destra).
  ![[Pasted image 20230902153659.png]]
+<!--ID: 1715263181685-->
+
 
 ### Quarto caso - cancellazione rb
  il fratello $z$, del doppio nero $y$, è nero e $z$ ha il destro rosso
@@ -128,10 +146,14 @@ il fratello $z$, del doppio nero $y$, è nero e $z$ ha entrambi i figli neri
  ![[Pasted image 20230902154116.png]]
  L’albero in $T$ abbia a sinistra un nero in più rispetto a destra.
 $z$ **(rosso/nero)** non crea problemi nel caso in cui sia **rosso**, inizialmente $T$ era **rosso/nero**. Se il problema non c’era prima, non ci sarà neanche dopo.
+<!--ID: 1715263181686-->
+
 
 ## Algoritmi
 ### Algoritmi di inserimento e cancellazione
 >[!tip] `NULLRB` è il puntatore al nodo foglia di un albero **red-black**, che è unico per evitare sprechi di memoria.
+<!--ID: 1715263181687-->
+
 #### Algoritmo di inserimento
 ```python
 def R-B-Insert(T, k):
@@ -149,6 +171,8 @@ def R-B-Insert(T, k):
 	return T
 ```
 ^R-B-Insert
+<!--ID: 1715263181688-->
+
 
 
 
@@ -229,6 +253,8 @@ def DeleteRB(T, k):
 	return T
 ```
 ^DeleteRB
+<!--ID: 1715263181689-->
+
 
 
 
@@ -357,3 +383,4 @@ Un [[albero binario]] di ricerca di altezza $h$, è in grado di eseguire operaz
 Queste operazioni sono veloci se l’albero è basso, ma se l’altezza è grande, le prestazioni ne risentono (si potrebbe arrivare anche ad un costo lineare).
 Gli alberi red-black rappresentano uno dei modi in cui gli alberi di ricerca vengono bilanciati, in modo tale da garantire alle operazioni elementari di essere eseguite in tempo $O(\log(n))$
 Negli ***alberi red-black***, i nodi contengono anche il loro colore, oltre che il puntatore al figlio destro e sinistro, e le variabili per i dati.
+<!--ID: 1715263181690-->

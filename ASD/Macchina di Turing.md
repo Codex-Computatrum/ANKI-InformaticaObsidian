@@ -16,3 +16,5 @@ Dove:
 La ***macchina di Turing*** inoltre, è dotata di un nastro infinito e il modello comprende una testina che può leggere e scrivere sul nastro infinito reagendo a ciò che è scritto sulla testina in base alla funzione di transizione $\delta$. La testina può muoversi, in base sempre alla funzione di transizione a destra o sinistra sequenzialmente sul nastro, di quante caselle preveda la funzione di transizione. 
 L'***importanza del modello astratto di Turing*** è la capacità di simulare qualsiasi calcolatore o algoritmo di calcolare mai inventabile. Sempre grazie alla non finitezza del nastro attraverso la quale la macchina opera.
 La ***limitatezza del modello astratto di Turing*** è l'accesso ai dati. Data la sequenzialità del nastro l'accesso ai dati è molto lento.
+<!--ID: 1715263181581-->
+

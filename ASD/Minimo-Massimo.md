@@ -15,6 +15,8 @@ def Min(T):
 		return Min(T -> sx)	
 ```
 ^min-rec
+<!--ID: 1715263181567-->
+
 
 
 
@@ -27,6 +29,8 @@ def Min(T):
 	return T
 ```
 ^min-iter
+<!--ID: 1715263181568-->
+
 
 
 
@@ -38,6 +42,8 @@ def Max(T):
 		return T
 	else
 		return Max(T -> dx)
+<!--ID: 1715263181569-->
+
 
 
 
@@ -53,6 +59,8 @@ def Max(T):
 	return T
 ```
 ^max-iter
+<!--ID: 1715263181570-->
+
 
 
 
@@ -75,6 +83,8 @@ def GetAndDeleteMin(T, p):
 - Quando la ricorsione risale non fa altro che ricopiare i figli **sinistri** nei figli sinistri
 - È un lavoro apparentemente inutile, ma sarà fondamentale per l'ultima chiamata prima della risalita, la quale sposterà il figlio **destro** nel nodo che contiene il minimo. 
 - Il dato $d$ sarà lo stesso per tutta la risalita e sarà quello che verrà sostituito al nodo da eliminare. 
+<!--ID: 1715263181571-->
+
 
 ### $\textbf{SkipRight}$
 
@@ -88,6 +98,8 @@ def SkipRight(x):
 - Salvo il figlio destro in $tmp$
 - $Deallocate(x)$
 - restituisco $tmp$
+<!--ID: 1715263181572-->
+
 
 
 ### $\textbf{SkipLeft}$
@@ -101,6 +113,8 @@ def SkipLeft(x):
 - Salvo il figlio sinistro in $tmp$
 - $Deallocate(x)$
 - Restituisco $tmp$
+<!--ID: 1715263181573-->
+
 
 
 ### $\textbf{SwapChild}$
@@ -116,3 +130,4 @@ def SwapChild(p, x, y):
 - Rispetto alla versione precedente, non c’è bisogno di restituire il padre ma lo si passa per riferimento.
  - $SwapChild$ scambia il figlio $x$ (di $p$) con un certo nodo $y$ . L’if controlla se $x$ è il figlio sinistro o destro di $p$  
 - Avviene lo scambio con $y$ e poi dealloca $x$
+<!--ID: 1715263181574-->

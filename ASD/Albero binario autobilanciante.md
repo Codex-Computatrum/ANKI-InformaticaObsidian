@@ -14,6 +14,8 @@ Gli ***AVL*** sono [[Albero binario di ricerca|alberi binari di ricerca]] auto b
 - $\forall x \in T, \lvert h(T_{x.sx})- h(T_{x.dx})\rvert \leq 1$ dove $T$ è l'albero, ossia l'[[altezza]] dei sotto alberi differisce al più di uno. 
 ![[Pasted image 20230831140231.png]]
 ---
+<!--ID: 1715263181704-->
+
 
 
 ### Definizione di AVL minimi e osservazioni
@@ -23,6 +25,8 @@ Questo **perché** gli algoritmi che scorrono l’altezza non dipendono dal nume
 Di conseguenza, se all’aumentare dei nodi non aumenta l’altezza, allora l’albero è migliore rispetto ad avere meno nodi con la stessa altezza (aumento la quantità dei dati mantenendo la stessa efficienza).
 In particolare, se ad una certa altezza ho il minimo numero di nodi, allora ho l’albero peggiore per quell’altezza.
 Si osserva dunque, che se si dimostra che per gli **AVL** minimi $h = \Theta(\log(n))$ allora lo è anche per quelli non minimi (ovvero per tutti gli **AVL**).
+<!--ID: 1715263181705-->
+
 
 ![[appuntiIngenito.pdf#page=37]]
 
@@ -64,17 +68,23 @@ L'[[algoritmo]] di inserimento, quindi dovrà anche risistemare l'albero affinch
 	- $\beta_{2}'$ continua ad essere $y < \beta'_{2} < z$ 
 	- $z$ continua $y < \beta_{2} < z$
 ---
+<!--ID: 1715263181706-->
+
 ### Costo dell'inserimento di un nodo in AVL
 Riparare, e quindi mantenere, la struttura di **AVL** dopo un inserimento, ha tempo costante dato che vengono effettuati degli scambi fra puntatori.
 Serve riparare l’albero ad ogni inserimento che rompe l’albero.
  
 ---
+<!--ID: 1715263181707-->
+
 
 
 ## Cancellazione in AVL
 La cancellazione porta gli stessi problemi dell'inserimento e si risolvono allo stesso modo
 ![[Pasted image 20230831170902.png]]
 ![[appuntiIngenito.pdf#page=41]]
+<!--ID: 1715263181708-->
+
 
 ---
 ## Funzionamento algoritmi per rotazioni
@@ -88,6 +98,8 @@ def L-R-Rotation(x):
 	 
 ```
 ^L-R-Rotation
+<!--ID: 1715263181709-->
+
 
 
 ![[Pasted image 20231117124137.png|400]]
@@ -204,6 +216,8 @@ def AVLInsert(T, k):
 	return T
 ```
 ^AVLInsert
+<!--ID: 1715263181710-->
+
 
 
 

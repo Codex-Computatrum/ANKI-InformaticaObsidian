@@ -15,6 +15,8 @@ Nelle [[Struttura dati|strutture dati]]  in generale esistono un numero di opera
 	- Restituisce una nuova struttura $S'$, con il dato $d$ eliminato
 - $IsEmpty(S): bool$
 	- Restituisce $true$ se la struttura $S$ è vuota, $false$ altrimenti
+<!--ID: 1715263181565-->
+
 
 
 

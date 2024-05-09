@@ -28,6 +28,8 @@ Di conseguenza, se si segue il percorso dei predecessori a ritroso, si ricava il
 Dato che il percorso viene costruito partendo dall’ultimo vertice e procedendo a ritroso, questi vengono inseriti in uno **stack**. Cosi facendo, quando si leggerà lo **stack**, lo si leggerà partendo dal primo vertice del percorso.
 La ricorsione avviene sul parametro $u$ sostituito con il suo predecessore $p(u)$ 
 La ricorsione termina quando il predecessore è il vertice iniziale.
+<!--ID: 1715263181582-->
+
 
 ```python
 def BuildMinimalPath(S, p, v, u):

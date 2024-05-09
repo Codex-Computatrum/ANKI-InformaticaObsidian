@@ -15,6 +15,8 @@ Possiamo formalizzare meglio la definizione di permutazione ordinata nel seguent
 - Proprietà dell'ordinamento $\rightarrow a'_{i} \leq a'_{i+1}$ con $i \leq i+1 \leq n$
 Prendendo l'esempio $A = (2,6,2)$ ci sono due funzioni che rispettano le seguenti proprietà:$$f_1:(1,1),(2,3),(3,2) \text { e } f_2:(1,2),(2,3),(3,1)$$
 Possiamo dunque. descrivere l'output anche come $A' = (a_{j_{1}}, a_{j_{2}}, \dots, a_{j_{n}})$ con $a_{j_{k}} \in A$ e $a_{k} \in A'$ con $1 \leq k \leq k$ e tale che $j_{k} = f^{-1}(k)$
+<!--ID: 1715263181555-->
+
 
 >[!example]
 > $A = 42 \; \land \; A' = 24$ allora $j_{2}= f^{-1}(2)= 1$
@@ -30,11 +32,15 @@ Questa soluzione è corretta, ma utilizzare un algoritmo di tipo *brute force* �
 Da questo deduciamo che per qualsiasi algoritmo di *brute force* esiste almeno un input che costringe a esplorare tutti gli elementi dell'insieme prima di arrivare alla soluzione.
 Anche supponendo per assurdo che si potrebbe generare una permutazione in tempo costante per verificare che la permutazione sia ordinata dobbiamo controllare tutti gli elementi (tempo lineare). Nel caso peggiore potrebbe generare $n! = \Omega(n^{n})$ permutazioni.
 Da questa analisi deduciamo che un algoritmo di questo tipo non è applicabile.
+<!--ID: 1715263181556-->
+
 
 ---
 ### Secondo approccio sul problema generale dell'ordinamento
 Bisogna cercare un algoritmo che da una sequenza ordinata cerchi di passare ad una sequenza un minimo più ordinata fino ad arrivare alla sequenza ordinata, escludendo alcune permutazioni. Tutti gli algoritmi che vedremo saranno $T(n) = \Theta(n^{2})$ proprio grazie a tale approccio.
 Un modo per ordinare la sequenza è quello di prendere tutte le coppie e confrontarne a due a due gli elementi. 
+<!--ID: 1715263181557-->
+
 
 >[!example]
 > Per $(a_{1}, a_{2,}, a_{3})$ arrivo alla sequenza ordinata tramite i seguenti confronti:$$a_1 \leq a_2\left\{\begin{array}{l}

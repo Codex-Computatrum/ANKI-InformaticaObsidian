@@ -44,6 +44,8 @@ r-p+1>\frac{p+r}{2}-p+1 \Longrightarrow 2 r>p+r \Longrightarrow r>p$$
 Essendo la nostra ipotesi proprio $p < r$ (condizione dell'`if`) abbiamo dimostrato la prima implicazione. Analogamente procede la seconda:$$
 r-p+1>r-\frac{p+r}{2} \Longrightarrow-p>-\left(\frac{p+r}{2}+1\right) \Longrightarrow 2 p<p+r+2 \Longrightarrow p<r+2$$
 Resta da dimostrare che, per qualsiasi input, l'algoritmo faccia un numero finito di chiamate ricorsive e che quindi, prima o poi, raggiungerà il caso base; quando `r` è molto vicino a `p`(ovvero quando $r < p +1$) è evidente che sarà $q = | \frac{p+r}{2}| = p$ e quindi entrambe le chiamate ricorsive non verranno effettuate (la condizione dell'`if` sarà dalla prima chiamata $p < p$ e alla seconda $p + 1 < r$, condizioni entrambe false).
+<!--ID: 1715263181576-->
+
 
 
 ### Occupazione in memoria
@@ -62,6 +64,8 @@ def Merge(A, p, q, r):
 			j = j + 1 
 	if i < q:
 		j = i
+<!--ID: 1715263181577-->
+
 
 
 # Restano da copiare gli elementi della sequenza sinistra
@@ -73,6 +77,8 @@ def Merge(A, p, q, r):
 # A questo punto andrebbero copiati gli elementi di B nuovamente in A
 ```
 ^Merge
+<!--ID: 1715263181578-->
+
 
 
 
@@ -82,6 +88,8 @@ Anche senza considerare **Merge** l'algoritmo MergeSort ha bisogno di uno spazio
 
 ### Tempo di esecuzione
 Sarebbe assurdo dover calcolare il valore del tempo di esecuzione della funzione se per farlo devo conoscere il tempo di esecuzione della funzione stessa.
+<!--ID: 1715263181579-->
+
 
 
 
@@ -110,5 +118,7 @@ T_{M S}(n)=\Theta(1) \cdot n+\sum_{i=0}^{\log n-} \Theta(n)=\Theta(n)+\Theta(n) 
 
 #### Analisi
 ![[appuntiIngenito.pdf#page=15]]
+<!--ID: 1715263181580-->
+
 
 ---

@@ -10,3 +10,4 @@ Il processo si estende su tre step:
 - **Combina**: Crea una sequenza ordinate combinando le sotto-sequenze
 La ricorsione "tocca il fondo" quando si è raggiunto il caso base.
 Nei casi dell'ordinamento come [[Merge sort]] viene "toccato il fondo" quando la sequenza ha lunghezza 1, dato che una sequenza di lunghezza 1 è già di per sé ordinata.
+<!--ID: 1715263181510-->

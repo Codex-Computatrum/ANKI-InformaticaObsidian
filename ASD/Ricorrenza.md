@@ -6,6 +6,8 @@ tags:
 
 ### Definizione di ricorrenza
 Una ***ricorrenza*** è una equazione o disequazione che descrive una funzione in termini dei suoi valori su input più piccoli.
+<!--ID: 1715263181536-->
+
 
 
 >[!tip]-
@@ -41,6 +43,8 @@ z(n) \\
 - $z(n)$ è il numero di chiamate
 > [!note] alcune note su $z(n)$
 > $z(n)$ viene definita come una funzione e non come una costante in quanto il numero di chiamate potrebbero dipendere dal valore in input $\rightarrow$ Non è detto che una chiamata debba fare lo stesso numero di chiamate ricorsive di un'altra chiamate nello stesso algoritmo
+<!--ID: 1715263181537-->
+
 
 
 
@@ -209,6 +213,8 @@ Da ciò segue:$$T_M(n) \leq \Theta(n)+\frac{2 c}{n} \sum_{q=1}^{n-1}(q \log q) \
 A questo punto se dimostriamo che $\Theta(n) - \frac{cn}{4} \leq 0$ allora risulterà (dopo la verifica del caso base) che $T_{M}(n) \leq c(n\log(n))$
 Sappiamo che $\Theta(n)$ è assimilabile ad un $kn$, allora risulta che $kn \leq \frac{cn}{4}$
 La costante $k$ è fissata della relazione $Theta$, ma la costante $c$ può essere scelta arbitrariamente. Basta scegliere pertanto $c \geq 4k$ per concludere che:$$T_M(n)=O(n \log n) \text { per } n \geq 2$$
+<!--ID: 1715263181538-->
+
 
 
 

@@ -7,6 +7,8 @@ author: Lorenzo Tecchia
 ### Idea generale sulla conversione tra un algoritmo ricorsivo e uno iterativo
 Qualsiasi [[algoritmo]] ricorsivo può essere trasformato in iterativo e viceversa.  
 La [[ricorsione]] permette di risolvere problemi difficili in modo semplice rispetto all’iterazione, però è svantaggiosa in termini di [[memoria]], dato che ogni chiamata alloca memoria per tenere traccia delle variabili locali, il valore di ritorno, e così via.
+<!--ID: 1715263181626-->
+
 
 
 
@@ -34,6 +36,8 @@ Scorrimento in [[Order-pre|pre-ordine]] e [[Order-post|post-ordine]] su una [[Li
 - $L$ lista
 - $F$ funzione che effettua operazioni sull'accumulatore
 - $a$ accumulatore: variabile che sarà restituita come risultato della funzione
+<!--ID: 1715263181627-->
+
 
 
 
@@ -79,6 +83,8 @@ Nelle non-tail recursive salviamo le variabili in uno **stack**. Non è possibi
 
 ## Traduzione di un algoritmo
 Questo è un algoritmo che lavora su un [[Tree|albero]]; non c’è semantica, serve solo come esempio per vedere la traduzione da ricorsivo a iterativo.
+<!--ID: 1715263181628-->
+
 
 
 
@@ -105,6 +111,8 @@ $F$, in generale, è una certa funzione che elabora i dati e restituisce un val
 	- riga $7$, viene sostituita con $k_{L}$ 
 	- riga $9$, viene letta $j$ che però ho perso avendola sostituita prima
 	- ***Ha bisogno dello stack***
+<!--ID: 1715263181629-->
+
 
 
 
@@ -124,6 +132,8 @@ $F$, in generale, è una certa funzione che elabora i dati e restituisce un val
 - $\textbf{h}_{R},\textbf{h}_{L}, \textbf{z}_{L}$:
 	- vengono sia scritte che lette dopo una chiamata ricorsiva
 	- ***Hanno bisogno dello stack***
+<!--ID: 1715263181630-->
+
 
 
 
@@ -151,6 +161,8 @@ Questa simulazione viene fatta quando si sta ritornando dalla chiamata ricorsiva
 > - Uso la negazione del caso base come condizione del $while$ 
 > - Uso il corpo della funzione ricorsiva(escludendo la chiamata ricorsiva della funzione) come il corpo del $while$
 > -  Alla fine del $while$ aggiungo all'accumulatore il caso base e ritorno l'accumulatore come output
+<!--ID: 1715263181631-->
+
 
 
 
@@ -173,6 +185,8 @@ Questa simulazione viene fatta quando si sta ritornando dalla chiamata ricorsiva
 > 	1. Preparo gli stack, quindi faccio il push delle variabili che sono state utilizzate
 > 	2. Sostituisco le variabili dei parametri con gli argomenti della chiamata
 > 	3. Imposto $call \leftarrow true$ perché dopo la $chiamata ricorsiva$ la funzione scende
+<!--ID: 1715263181632-->
+
 
 
 

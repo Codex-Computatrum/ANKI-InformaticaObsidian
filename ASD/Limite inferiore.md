@@ -6,3 +6,4 @@ tags: [definition]
 ### Definizione di limite inferiore
 Un qualsiasi [[algoritmo]] di ordinamento per confronto deve effettuare $\Omega(n\log(n))$ nel caso peggiore, per ordinare $n$ elementi.
 Un'[[ordinamento]] per confronti può essere visto come un **_albero di decisione_**.
+<!--ID: 1715263181587-->

@@ -9,6 +9,8 @@ tags:
 Sia la posizione che l'elemento vengono ovviamente scelti con condizione di causa
 Se iniziamo dall'ultima posizione, ovvero $n$, allora si dovrà trovare il massimo elemento della sequenza e poi scambiarlo con quello in posizione $n$ (se invece si inizia dalla prima allora cercheremo il minimo).
 A questo punto si prosegue con la posizione $n-1$ scambiando l'elemento in quella posizione con la sequenza restante (da $1$ a $n-1$) e si procede in questo modo fino alla posizione $2$ (ovviamente l'elemento in posizione $1$ sarà già ordinato per la sequenza $\rightarrow$ è evidente che dopo gli $n-1$ scambi in posizione $1$ sia presente il minimo).
+<!--ID: 1715263181533-->
+
 
 
 
@@ -52,5 +54,7 @@ Quindi l'albero sopra, con l'arco che rappresenta la relazione di $\geq$, presen
 - $x \geq k$ (per transitività)
 Quindi oltre alle informazioni dirette, abbiamo una relazione tra tutti gli elementi di uno stesso ramo
 Dunque organizzando i valori in un albero dove l'arco rappresenterà la relazione di $\geq$ possiamo migliorare il tempo di esecuzione dell'algoritmo `Max` e di conseguenza anche di ***SelectionSort***.
+<!--ID: 1715263181534-->
+
 
 ---

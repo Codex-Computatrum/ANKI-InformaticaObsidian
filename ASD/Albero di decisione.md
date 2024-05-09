@@ -7,6 +7,8 @@ tags:
 ## Albero di decisione
 Un [[Tree|albero]] di decisione è un [[Albero binario#^albero-binario-completo|albero binario completo]] (tutti i nodi hanno entrambi i figli) che rappresenta i confronti fra gli elementi di un array.
 L’[[ordinamento]], in un’albero di decisione, consiste nel tracciare un [[Path|percorso]] a partire dalla radice fino ad una foglia; ogni nodo attraversato rappresenta un confronto e la foglia contiene la sequenza ordinata.
+<!--ID: 1715263181692-->
+
 
 ---
 ### Teorema dell'ordinamento
@@ -25,6 +27,8 @@ $$\log(\sqrt{2\pi n }(\frac{n}{e})^{n})= \log(\sqrt{2\pi}) + \frac{1}{2}\log(n)+
 Si ottiene dunque che $\Theta(n\log(n)) \leq h$ ossia che $h=\Omega(n\log(n))$
 >[!success] 
 >Di conseguenza, un ordinamento per confronti, nel caso peggiore non può fare meno di $n\log(n)$ confronti
+<!--ID: 1715263181693-->
+
 
 ### Dimostrazione del teorema sull'ordinamento 
 Fissato $n$ ho un numero finito di alberi di decisione, quindi il nostro scopo sarà vedere tra tutti gli alberi quello con altezza minima, in modo da trovare il numero minimo di confronti che un algoritmo che fa nel caso peggiore (analizziamo il tempo di esecuzione del miglior caso peggiore).
@@ -45,6 +49,8 @@ $$
 In questo modo abbiamo raggiunto l'obiettivo, infatti:$$
 \frac{n}{2} \log \frac{n}{2} \leq \sum_{i=1}^n \log i \leq n \log n \Longrightarrow h \geq \Theta(n \log n)$$
 Abbiamo dimostrato quindi che per il caso peggiore un algoritmo di ordinamento, dovendo per forza di cosa fare tanti confronti quanto la lunghezza del percorso più lungo del suo albero di decisione, non può essere meglio di $\Theta(n \log n)$
+<!--ID: 1715263181694-->
+
 
 #### Dimostrazione per il caso medio nel teorema dell'ordinamento
 Il caso medio risulta più complesso $\rightarrow$ Per poter calcolare il tempo di esecuzione dovremo fare una media aritmetica tra la lunghezza del percorso esterno (somma dei percorsi della radice e ciascuna foglia) e il numero delle foglie dell'albero.
@@ -75,3 +81,4 @@ T_M(n) & =\frac{L P E}{n !}=\text { frach } \cdot N_h+(h-1) N_h-1 n !=\frac{2 h 
 & =\frac{h n !-2^h+n !}{n !}=h-\frac{2^h}{n !}+1 \stackrel{h \log !}{\Longrightarrow} T_M(n)=\log n !-\frac{2^{\log n !}}{n !}+1=\log n !
 \end{aligned}$$
 Abbiamo dimostrato che $\log n! = \Theta(n \log n)$ e quindi abbiamo concluso che il tempo di esecuzione di un algoritmo d'ordinamento per una sequenza arbitraria di input $n$ non possa essere, nel caso medio e peggiore, migliore di $\Theta(n \log(n))$
+<!--ID: 1715263181695-->

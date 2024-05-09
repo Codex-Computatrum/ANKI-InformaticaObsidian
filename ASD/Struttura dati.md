@@ -15,6 +15,8 @@ Una struttura dati è un'entità che serve a:
 - accedere
 - modificare
 dei dati.
+<!--ID: 1715263181523-->
+
 
 
 
@@ -27,4 +29,6 @@ dei dati.
 - Efficienza spaziale della struttura
 - Persistenza vs Mutabilità
 - Livello di astrazione dell'interfaccia
+<!--ID: 1715263181524-->
+
 

@@ -15,12 +15,16 @@ $$\delta(u, v) = \begin{cases}\min \{w(p): u \rightarrow v\} & \text { se esiste
 Un percorso minimo da $u$ a $v$ è un qualsiasi percorso con peso $w(p)=\delta(u, v)$
 >[!important] 
 > L'obiettivo degli algoritmi seguenti è quello di, dato un grafo $G =(V, E, w)$, trovare il percorso minimo da un vertice sorgente $s\in V$ ad un qualsiasi vertice $v\in V$.
+<!--ID: 1715263181606-->
+
 
 ###  Lemma  sulla definizione di grafo pesato
 Dato un grafo pesato ed orientato $G =(V, E, w)$ e sia  $π=v_1v_{2\dots}v_{k-1}v_k$ un percorso minimo da $v_1$ a $v_k$ in G,  $\forall \ 1 \leq i  \leq j  \leq k$,  $π_{ij} =v_iv_{i+1}\dots v_j$ è il sotto-percorso  da $v_i$ a $v_j$. 
 Allora $π_{ij}$ è un percorso minimo da $v_i$ a $v_j$.
 >[!note] 
 > Ogni sotto-percorso di un percorso minimo è a sua volta un percorso minimo.
+<!--ID: 1715263181607-->
+
 
 
 ---
@@ -30,6 +34,8 @@ Invece, se il grafo contiene cicli a peso negativo raggiungibili da $s$, non è 
 Quindi, se nel grafo è presente un ciclo a peso negativo raggiungibile da $s$, definiamo $\delta(s, v) = -\infty$.
 >[!note] 
 > Un percorso minimo non può contenere nemmeno cicli positivi, perchè togliendo un ciclo da un percorso minimo, trovo un altro percorso minimo.
+<!--ID: 1715263181608-->
+
 
 ---
 ### Inizializzazione delle stime su un grafo pesato
@@ -45,6 +51,8 @@ def Init(G, s):
 - La stima del vertice sorgente viene inizializzata a 0, mentre per ogni vertice $v\in V$, viene inizializzata a $\infty$.
 - Il vettore $Pred[v]$ contiene il predecessore di $v$ nel percorso minimo.
 ---
+<!--ID: 1715263181609-->
+
 
 
 ### Operazione di rilassamento
@@ -61,28 +69,38 @@ def Relax(u, v, w):
 >[!example]-
 > - Nel caso (a), $d[v]\geq d[u] + w(u, v)$, quindi con l'operazione di rilassamento il valore di $d[v]$ decresce.
 > - Nel caso (b), $d[v] \leq d[u] + w(u, v)$ prima di rilassare l'arco, quindi l'operazione di rilassamento lascia d[v] invariato.
+<!--ID: 1715263181610-->
+
 
 ---
 
 #### Corollario 1 del percorso minimo e del rilassamento
 Dato un grafo pesato $G =(V, E, w)$ e sia  $π=v_{1}v_{2}\dots v_{k-1}v_k$ un percorso minimo da $v_1$ a $v_k$ , allora  $\delta(v_1, v_k)\leq\delta(v_1, v_{k-1})+w(v_{k-1}, v_k)$
+<!--ID: 1715263181611-->
+
 
 
 
 #### Lemma 2 del percorso minimo e del rilassamento
 Dato un grafo pesato $G =(V, E, w)$ e $s \in V$. Per ogni arco $(u, v)\in E$ vale che:
 $\delta(s, v)\leq\delta(s, u)+w(u, v)$.
+<!--ID: 1715263181612-->
+
 
 
 
 #### Lemma 3 del percorso minimo e del rilassameneto
 Dato un grafo pesato $G =(V, E, w)$ e  un arco $(u, v) \in E$, immediatamente dopo l'esecuzione di $Relax(u, v, w)$ varrà che: $d[v]\leq d[u]+ w(u, v)$.
+<!--ID: 1715263181613-->
+
 
 
 
 
 #### Lemma 4 del percorso minimo e del rilassamento
 Dato un grafo pesato $G =(V, E, w)$ e posti $d[v]= \infty$,  $\forall v \in V \setminus \{s\}$ e $d[s] = 0$ lungo una qualsiasi sequenza di operazioni di rilassamento vale sempre: $d[v]\geq \delta(s, v), \ \forall v \in V$
+<!--ID: 1715263181614-->
+
 
 
 
@@ -94,16 +112,22 @@ Dato un grafo pesato $G =(V, E, w)$ e posti $d[v]= \infty$,  $\forall v \in V \s
       1. Se prima dell'operazione di rilassamento $d[y]\leq d[x]+w(x,y)$, $Relax(x, y, w)$ non modifica niente, quindi vale $d[y]\geq\delta(s, y)$.
       2. Se prima dell'operazione di rilassamento $d[y]> d[x] + w(x,y)$ allora $Relax(x, y, w)$ rilassa l'arco: $d[y]=d[x]+w(x,y)$. Quindi dal Lemma 2:
 	   $d[x]\geq \delta(s,x)$, e di conseguenza $d[x] +w(x,y)\geq \delta(s,x)+w(x,y)\geq \delta(s,y)$.
+<!--ID: 1715263181615-->
+
 
 #### Corollario 2 del percorso minimo e del rilassamento
 Siano $s,v \in V$ e sia $s$ la sorgente. Se $v$ è raggiungibile da $s$, in ogni momento lungo una sequenza arbitraria di rilassamenti vale: $d[v]=\delta(s, v)$. Consideriamo le stime iniziali: $d[s]=0,\ d[v]=\infty$.
 Di conseguenza, se $v$ non è raggiungibile da $s$, allora $\delta(s, v)=\infty$ e $d[v]\geq\delta(s, v),\ \forall v \in V$
+<!--ID: 1715263181616-->
+
 
 
 
 
 #### Lemma 5 del percorso minimo e del rilassamento
 Dato un grafo pesato $G =(V, E, w)$ e sia $π=v_1v_{2\dots}v_{k-1}v_k$ un percorso minimo da $v_1$ a $v_k$, inizializzando $d[s]= 0,\ d[v]=\infty$. Presa un'arbitraria sequenza di rilassamento che contiene $Relax(v_{k-1},v_k,w)$, se prima dell'esecuzione di $Relax$ $d[v_{k-1}]=\delta(s, v_{k-1})$, allora dopo l'esecuzione di $Relax$ vale: $d[v_k]=\delta(s, v_k)$.
+<!--ID: 1715263181617-->
+
 
 
 
@@ -130,6 +154,8 @@ def Dijkstra(G, s):
 - Ogni volta che viene eseguito il ciclo $while$ delle righe $5-10$, un vertice $u$ , con la minima stima tra i vertici di $Q$, viene estratto da $Q = V-S$  e  inserito in $S$. 
 - Le righe $9-10$, rilassano ogni arco uscente da $u$ e se il cammino minimo per $v$ può essere migliorato passando per $u$, aggiornano la stima $d[v]$ e il predecessore $Pred[v]$.
 - Dopo la riga $4$, nessun vertice viene inserito in $Q$, infatti ogni vertice che esce da $Q$ viene inserito in $S$ esattamente una volta, quindi il ciclo $while$ viene eseguito $|V|$ volte.
+<!--ID: 1715263181618-->
+
 
 #### Analisi dell'algoritmo di Dijkstra
 Poiché l'algoritmo sceglie sempre il vertice in $Q$ "più vicino" da inserire in $S$, diciamo che esso utilizza una strategia [[greedy]].
@@ -137,6 +163,8 @@ Ogni operazione di $Extract\_Min$ richiede tempo $O(V)$, e ci sono $|V|$ operazi
 Ogni vertice $v\in V$  viene inserito in $S$ esattamente una volta e ogni arco in $Adj[v]$ viene esaminato nel ciclo $for$ esattamente una volta. 
 Poiché ogni lista di adiacenza contiene $|E|$ archi, il ciclo $for$ viene eseguito $|E|$ volte, ognuna delle quali richiede tempo $O(1)$.
 Quindi il tempo totale di esecuzione dell'algoritmo è di $O(V^{2}+ E)= O(V^2)$.
+<!--ID: 1715263181619-->
+
 
 ---
 ### Algoritmo di Bellman-Ford
@@ -157,6 +185,9 @@ def Bellman_Ford(G, s):
 ^Bellman-Ford
 - Ogni volta che viene eseguito il ciclo $for$ delle righe $3-5$, ogni arco viene rilassato una volta.
 - Le righe $6-9$ controllano l'esistenza di cicli a peso negativo e restituiscono il valore booleano appropriato.
+<!--ID: 1715263181620-->
+
 
 #### Analisi dell'algoritmo di Bellman-Ford
 Ogni esecuzione di $Init$ richiede tempo $\Theta(V)$, ogni iterazione del ciclo $for$  alle righe $3-5$ richiede tempo $O(E)$, mentre il ciclo for alle righe $6-9$ richiede anch'esso tempo $O(E)$, quindi il tempo totale di esecuzione dell'algoritmo è $O(VE)$, mentre nel caso peggiore sarà $O(V^3)$.
+<!--ID: 1715263181621-->

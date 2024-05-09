@@ -15,6 +15,8 @@ In un [[Tree|BST]], il successore di un qualsiasi numero (anche non presente nel
 - Non posso più scendere a causa dello $0$
 Quindi l’idea è quella di aggiornare la stima con $x$ quando il dato $d$ è minore di $x$, ovvero quando scendo a sinistra.
 Vorrà dire che $x$ è un maggiorante di $d$, ma non sappiamo se è il minimo dei maggioranti. Se scendo a destra, non aggiorno la stima poiché $x$ è minore, non è un maggiorante, del dato $d$
+<!--ID: 1715263181520-->
+
 
 ### Versione iterativa della ricerca del successore in ABR
 ```python
@@ -32,6 +34,8 @@ def Successor(x, d):
 				return s
 ```
 ^SuccessorABR-Iterative
+<!--ID: 1715263181521-->
+
 
 
 
@@ -47,6 +51,8 @@ def Successor(x, d, s):
 			return Successor(x.sx, d, x)
 ```
 ^SuccessorABR-Recursive
+<!--ID: 1715263181522-->
+
 
 Viene passata la stima $s$ come parametro la quale verrà aggiornata solo se si scende a sinistra.  
 Nella prima chiamata sarà $\bot$ 

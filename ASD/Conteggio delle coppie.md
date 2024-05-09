@@ -20,6 +20,8 @@ def contaCoppie(N):
 	return ris
 ```
 ^Conta-Coppie1
+<!--ID: 1715263181633-->
+
 
 ## Correttezza dell'algoritmo del conteggio delle coppie - versione naive
 >[!note] La correttezza di questo [[algoritmo]] è ovvia, intuitivamente è la soluzione peggiore per poter risolvere il problema, generiamo anche coppie inutili.
@@ -32,12 +34,16 @@ La riga $3$ si ripete $n + 1 \cdot \left(\sum\limits^{i=1}_{n+1}\right)\text{vol
 La riga $4$ invece, $n+1$ volte per ogni volta che si ripete il precedente quindi: $\sum\limits^{i=1}_{n}(\sum\limits^{j=1}_{n+1}1)$. Il totale, quindi sarà $2 \cdot (n+1)$
 La riga $5$ si ripete $\sum\limits_{i=1}^{n}\left(\sum\limits_{j=1}^{n+1}1\right)= n^{2}, \;\;\text{dunque}\;\; 3n^2$
 La riga $6$ sicuramente si ripete un numero di volte compreso tra $0$ e $n^2$, quindi il valore della linea di codice è $0 \leq x \leq n^{2}$.
+<!--ID: 1715263181634-->
+
 
 ### Soluzione 1 (naive) del problema del conteggio delle coppie
 Ora non ci resta che analizzare la complessità totale:$$\begin{align}T_1(n) &= 1 + 2(n+1) + 2n(n+1)+3n^{2}+x+1 \\
 &= 1 +2n+2+2n^{2}+2n+3n^{2}+x+1 \\ &= 5n^{2}+4n+4+x
 \end{align}$$
 È importante notare che il valore di $x$ non influisce sul risultato dell'analisi poiché l'espressione sarà sempre del tipo $an^{2}+bn + c$, dunque è una [[funzione]] parabolica. Avrà quindi tempo di esecuzione **quadratico** sulla dimensione dell'input.
+<!--ID: 1715263181635-->
+
 
 ### Soluzione 2 del problema del conteggio delle coppie
 Visto che una coppia vale come contributo al risultato solo quando il secondo elemento è maggiore del primo è evidente che possiamo migliorare il precedente algoritmo nel seguente modo:
@@ -49,6 +55,8 @@ def contaCoppie(n):
 			ris = ris + 1
 ```
 ^Conta-Coppie2
+<!--ID: 1715263181636-->
+
 
 Analizziamo la complessità
 
@@ -76,6 +84,8 @@ def contaCoppie(n):
 ^Conta-Coppie3
 Di conseguenza avremo che:$$T_{3}(n) = 7n + 4$$
 Questo tipo di funzione cresce linearmente e quindi è nettamente migliore rispetto ai precedenti algoritmi poiché, per la stessa crescita di $\mathbb{N}$, questa soluzione cresce più lentamente.
+<!--ID: 1715263181637-->
+
 
 ### Soluzione 4 del problema del conteggio delle coppie
 Il problema permette di ridurre ulteriormente il tempo di esecuzione.
@@ -92,9 +102,13 @@ Ne deduciamo che il problema di partenza è risolvibile a tempo costante, più p
 Era possibile arrivare a questo soluzione anche geometricamente, infatti le coppie possono essere considerate come le celle di una matrice quadrata.
 Le celle totali (ovvero tutte le coppie possibili) sono $\mathbb{N} \times \mathbb{N}$, ma quelle di nostro interesse sono tutte quelle sopra la ***diagonale principale***(diagonale compresa).
 Quindi essendo $n$ elementi nella diagonale, sopra si trovano $\frac{n^{2}-n}{2} +n = \frac{n(n+1)}{2}$ elementi.
+<!--ID: 1715263181638-->
+
 
 ### Conclusione sul problema del conteggio delle coppie
 ![[Pasted image 20231116152637.png]]
+<!--ID: 1715263181639-->
+
 
 
 
@@ -102,3 +116,4 @@ Quindi essendo $n$ elementi nella diagonale, sopra si trovano $\frac{n^{2}-n}{2}
 ![[Pasted image 20231116152827.png]]
 In simboli: $f(n) = O(g(n))$ pertanto $f$ o cresce di meno o allo stesso modo di $g$ (la si può considerare come la versione più permissiva dell'$o$-piccolo):![[Analisi asintotica#^O-grande]]
 Di conseguenza più è piccolo $n_{0}$ più grande dovrà essere la costante $c$, che nel caso del limite superiore asintotico è usualmente compreso in un intervallo tra $0$ e $1$.
+<!--ID: 1715263181640-->

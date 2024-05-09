@@ -9,6 +9,8 @@ tags:
 ### Idea generale dell'inserimento in ABR
 È importante che la struttura di [[Albero binario di ricerca|BST]] persista anche dopo l’inserimento.  
 Per semplicità non considereremo anche il caso dei duplicati; dato che se ci fossero, basterebbe tener traccia di quanti valori duplicati ci sono con un contatore nel nodo in questione.
+<!--ID: 1715263181595-->
+
 
 
 
@@ -35,3 +37,4 @@ Scorro ricorsivamente a destra se il dato è maggiore, altrimenti a sinistra; f
 >[!note]
 > L’inserimento fatto in questo modo potrebbe sbilanciare l’albero.  
 > Esistono metodi per inserire e mantenere l’albero bilanciato; è più costoso ma ne giovano tutti gli altri algoritmi. 
+<!--ID: 1715263181596-->

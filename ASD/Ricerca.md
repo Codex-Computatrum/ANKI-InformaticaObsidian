@@ -14,6 +14,8 @@ Dato un puntatore alla radice e un dato, $Search$ ***restituisce il puntatore al
 	- cerco a destra se il dato da cercare è più grande del dato contenuto nel nodo
 	- altrimenti cerco a sinistra.  
 - Continuo così finché o trovo il dato o sono arrivato alle foglie.
+<!--ID: 1715263181539-->
+
 
 
 ```python
@@ -33,6 +35,8 @@ def Search(x, d):
 ### Complessità della ricerca in ABR
 Nel caso peggiore, il percorso più lungo sarà quanto l'altezza dell'albero.
 L'operazione di ricerca quindi impiega $O(h)$
+<!--ID: 1715263181540-->
+
 
 ---
 

@@ -24,6 +24,8 @@ aliases:
 - Il nodo $d$ tenta di visitare $f$ ma che è già stato visitato, termina la sua visita, viene colorato di **nero** e passa il controllo a $b$.
 - Anche $b$ ha terminato e viene colorato di **nero**.
 - Non essendoci più nodi da visitare, l’[[algoritmo]] termina.
+<!--ID: 1715263181624-->
+
 
 
 
@@ -68,3 +70,4 @@ $d, f, t$ sono solo utili a dimostrare il teorema della [[Teorema della struttur
 - Terminata la visita dei suoi adiacenti, $v$ termina il suo lavoro: viene colorato di **nero** e viene impostato il tempo di fine visita  
 >[!note]
 > Viene assegnato $t$ come tempo di fine visita, ma le chiamate ricorsive l’avranno incrementato, quindi **non è lo stesso di prima**
+<!--ID: 1715263181625-->

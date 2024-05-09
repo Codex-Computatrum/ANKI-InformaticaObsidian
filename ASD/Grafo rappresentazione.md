@@ -10,6 +10,8 @@ Ci sono due modi per rappresentare un [[Graph|grafo]] in un computer:
 - come una collezione di ***lista d'adiacenza***
 - come una ***matrice di adiacenza***
 La rappresentazione con liste di adiacenza consiste in un array $Adj$ (adjacent - adiacenti) di $|V|$ liste, una per ogni ogni vertice di $V$ ; per ogni $u\in V$ , la lista $Adj[u]$ contiene tutti i vertici adiacenti a $u$.   ^94590e
+<!--ID: 1715263181603-->
+
 
 ### Metodo maggiormente usato per la rappresentazione di grafi
 Metodo maggiormente utilizzato per i ***grafi sparsi***, ovvero $|E|$ è molto più piccola di $|V|^2$.
@@ -26,6 +28,8 @@ a_{i,j} = \begin{cases}
 - $0$ la non esistenza
 Metodo maggiormente utilizzato per i grafi densi, ovvero $|E|$ è vicina a $|V|^2$ 
 [[Grafo esempi#Grafo con matrice di adiacenza|Esempio con matrice d'adiacenza]]
+<!--ID: 1715263181604-->
+
 
 
 

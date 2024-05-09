@@ -14,6 +14,8 @@ Quindi se $a_{j-1} \leq a_{j}$ allora mantiene la stessa posizione. In caso cont
 Ripetendo questo processo posso arrivare a confrontare $a_{j}$ con $a_1$:
 - Se $a_{1}\leq a_j$ posizionerò $a_{j}$nella posizione $2$ (che sarà libera);
 - In caso contrario andrà in posizione $1$ ed $a_{1}$ in posizione $2$ (questi spostamenti hanno ovviamente un costo loro).
+<!--ID: 1715263181588-->
+
 
 ###### Algoritmo Ricorsivo
 ```python
@@ -23,6 +25,8 @@ def InsertionSort(A, n):
 		Insert(A, n-1)
 ```
 ^InsertionSortRecursive
+<!--ID: 1715263181589-->
+
 
 ###### Algoritmo Iterativo
 ```python
@@ -31,6 +35,8 @@ def InsertionSort(A, n):
 		Insert(A, i)
 ```
 ^InsertionSort-Iterative
+<!--ID: 1715263181590-->
+
 
 ```python
 def Insert(A, i):
@@ -69,6 +75,8 @@ T(N)=2 N+2(N-1)+2(N-1)+4 \sum_{j=2}^N t_j+3 \sum_{j=2}^N\left(t_j-1\right)+\sum_
 =4 \sum_{j=2}^N t_j+4 \sum_{j=2}^N\left(t_j-1\right)+9 N-7
 \end{gathered}$$
 ---
+<!--ID: 1715263181591-->
+
 
 ### Analisi del caso peggiore di InsertionSort
 Se la seconda condizione del `while` è sempre verificata è chiaro che $i=0$(poiché all'inizio $i=j-1$) si verifica dopo $j$ iterazioni (uscendo quindi dal `while`)
@@ -82,12 +90,16 @@ Questo input esiste ed è la ***sequenza decrescente***:$$
 & =4 N^2+5 N-7=\Theta\left(N^2\right)
 \end{aligned}$$
 ---
+<!--ID: 1715263181592-->
+
 
 ### Analisi del caso migliore di InsertionSort
 Con sequenze ordinate accade che $\forall j\;:\;2 \leq j \leq n$ risulta che $t_{j} = 1$.
 >[!example]-
 > Per $(3,7,8,10)$ la seconda condizione del `while` risulterà falsa per ciascun $j \rightarrow$ ci saranno quindi $4$ esecuzioni:$$
 T_{\min }(N)=9 N-7+4 \sum_{j=2}^N 1+4 \sum_{j=2}^N 0=9 N-7+4(N-1)=13 N-11=\Theta(N)$$ 
+<!--ID: 1715263181593-->
+
 
 
 
@@ -103,5 +115,7 @@ Ma allora:$$
 \end{aligned}$$
 >[!Conclusion]
 >Visto che il caso dominante è quello peggiore, possiamo assumere che l'algoritmo di ***Insertion sort è un algoritmo che tempo di esecuzione quasi sempre quadratico***
+<!--ID: 1715263181594-->
+
 
 ---

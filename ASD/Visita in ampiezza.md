@@ -27,4 +27,6 @@ Per distinguere questi tre stati, su utilizzerà una ***colorazione del nodo***
 - ![[Pasted image 20230908115143.png|400]]
 - ![[Pasted image 20230908115204.png|400]]
 - ![[Pasted image 20230908115229.png|400]]
+<!--ID: 1715263181512-->
+
 

@@ -11,6 +11,8 @@ tags:
 Per la [[visita in ampiezza]] c'è bisogno di una [[struttura dati]] accessori: la [[coda]].
 - Estraggo il nodo in testa, lo utilizzo, poi accodo i figli nel caso li abbia.
 	- Verrà inizialmente accodata la radice fuori dal $repeat \dots until$ 
+<!--ID: 1715263181672-->
+
 
 ### Implementazione dell'[[algoritmo]] Breath First Visit
 
@@ -29,6 +31,8 @@ def BFV(x, F, a):
 	return a
 ```
 ^BFV
+<!--ID: 1715263181673-->
+
 
 - $Q$ è la coda, struttura d'appoggio
 - $Enqueue$ inserisce la radice $x$ in $EmptyQueue$ 

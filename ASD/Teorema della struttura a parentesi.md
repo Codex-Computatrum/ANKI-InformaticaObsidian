@@ -12,6 +12,8 @@ tags:
 Una proprietà della visita in profondità è che i tempi di scoperta e di completamento di un vertice, hanno una struttura a parentesi.
 Se rappresentiamo la scoperta di un vertice con una parentesi aperta ”$(v$” e il completamento con una parentesi chiusa ”$v)$”, allora la storia delle scoperte e dei completamenti produce un’espressione in cui le parentesi sono ben annidate.
 ![[Pasted image 20230910122938.png]]
+<!--ID: 1715263181514-->
+
 
 
 ---
@@ -22,4 +24,6 @@ Successivamente viene chiuso $v$, ma per fare il pop di $v$ dallo stack:
 - o questo si trova al top dello stack, ma ciò vuol dire che $v$ è stato scoperto due volte e questo non può accadere  
 - o è assurdo dato che devo fare prima il $pop$ di $w$
 ![[Pasted image 20230910123643.png|250]]
+<!--ID: 1715263181515-->
+
 
